@@ -97,4 +97,4 @@ rm -rf terraform.tfstate*
 
 ## References
 - [Terraform Providers](https://www.terraform.io/docs/configuration/providers.html)
-- [ESXi Provider Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+- [ESXi Provider Documentation](https://registry.terraform.io/providers/josenk/esxi/docs)
