@@ -24,9 +24,10 @@
 }
 
 # VMware Example
-resource "esxi_guest" "vmsalehmiri01" { # BLOCK
-  guest_name = "vmsalehmiri01" # Argument
-  disk_store = var.disk_store # Argument with value as expression (Variable value replaced from varibales.tf
+resource "vsphere_virtual_machine" "saleh_vm" { # BLOCK
+  name             = "saleh-vm" # Argument
+  datastore_id     = data.vsphere_datastore.ds.id # Argument with value as expression (Variable value replaced from varibales.tf
+  ...
 }
 ```
 

@@ -16,28 +16,31 @@
 terraform {
   required_version = ">= 0.13"
   required_providers {
-    esxi = {
-      source = "registry.terraform.io/josenk/esxi"
+    vsphere = {
+      source  = "registry.terraform.io/hashicorp/vsphere"
     }
   }
 }
 
 # Provider Block
-provider "esxi" {
-  esxi_hostname = "192.168.1.10"
-  esxi_hostport = "22"
-  esxi_hostssl  = "443"
-  esxi_username = "root"
-  esxi_password = "password"
+provider "vsphere" {
+  user                 = "administrator@vsphere.local"
+  password             = "P@ssw0rd"
+  vsphere_server       = "1.2.3.4"
+  allow_unverified_ssl = true
 }
 
 # Resource Block
-resource "esxi_guest" "vmsalehmiri01" {
-  guest_name = "vmsalehmiri01"
-  disk_store = "DS_001"
-  network_interfaces {
-    virtual_network = "VM Network"
-  }
+resource "vsphere_virtual_machine" "saleh_vm" {
+  name             = "saleh-vm"
+  resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id
+  datastore_id     = data.vsphere_datastore.ds.id
+
+  num_cpus = 4
+  memory   = 10240
+...
+...
+...
 }
 ```
 
