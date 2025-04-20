@@ -7,35 +7,32 @@
 - Understand about default provider
 - Understand and define multiple provider configurations of same provider
 ```t
-# Provider-1 for us-east-1 (Default Provider)
-provider "esxi" {
-  esxi_hostname = var.esxi_hostname
-  esxi_hostport = var.esxi_hostport
-  esxi_hostssl  = var.esxi_hostssl
-  esxi_username = var.esxi_username
-  esxi_password = var.esxi_password
+# Provider-1 for cluster1 (Default Provider)
+provider "vsphere" {
+  user                 = "administrator@vsphere.local"
+  password             = "P@ssw0rd"
+  vsphere_server       = "1.2.3.4"
+  allow_unverified_ssl = true
 }
 
-# Provider-2 for us-west-1
-provider "nsxt" {
-  host                 = var.nsxt_host
-  username             = var.nsxt_username
-  password             = var.nsxt_password
-  allow_unverified_ssl = var.nsxt_allow_unverified_ssl
-  max_retries          = var.nsxt_max_retries
+# Provider-2 for cluster2
+provider "vsphere" {
+  user                 = "sre@vsphere.local"
+  password             = "1404AdvancePass"
+  vsphere_server       = "11.12.13.14"
+  allow_unverified_ssl = true
+  alias = "cluster2"
 }
 ```
 
 ## Step-03: How to reference the non-default provider configuration in a resource?
 ```t
-# Resource Block to Create VPC in us-west-1
-resource "nsxt_policy_group" "NSXT-AD-List-GP" {
-  display_name = var.policy_group_display_name
+# Resource Block to Create VM in Cluster2
+resource "vsphere_virtual_machine" "resource2_vm" {
+  name     = "resource2_vm"
   #<PROVIDER NAME>.<ALIAS>
-  provider = aws.aws-west-1
-  tags = {
-    "Name" = "vpc-us-west-1"
-  }
+  provider = vsphere.cluster2
+  ...
 }
 ```
 
@@ -54,8 +51,8 @@ terraform plan
 terraform apply -auto-approve
 
 # Verify the same
-1. Verify the VPC created in us-east-1
-2. Verify the VPC created in us-west-2
+1. Verify the created VM in Cluster1
+2. Verify the created VM in Cluster2
 ```
 
 ## Step-05: Clean-Up 
@@ -67,8 +64,6 @@ terraform destroy -auto-approve
 rm -rf .terraform*
 rm -rf terraform.tfstate*
 ```
-
-
 
 ## References
 - [Provider Meta Argument](https://www.terraform.io/docs/configuration/meta-arguments/resource-provider.html)
