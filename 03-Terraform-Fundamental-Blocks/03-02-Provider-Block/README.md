@@ -25,8 +25,8 @@
 terraform {
   required_version = ">= 0.13"
   required_providers {
-    esxi = {
-      source = "registry.terraform.io/josenk/esxi"
+    vsphere = {
+      source  = "registry.terraform.io/hashicorp/vsphere"
     }
   }
 }
@@ -37,12 +37,12 @@ terraform {
 - Create a Provider Block for VMware
 ```t
 # Provider Block
-provider "esxi" {
-  esxi_hostname = "192.168.1.10"
-  esxi_hostport = "22"
-  esxi_hostssl  = "443"
-  esxi_username = "root"
-  esxi_password = "password"
+# Provider Block
+provider "vsphere" {
+  user                 = "administrator@vsphere.local"
+  password             = "P@ssw0rd"
+  vsphere_server       = "1.2.3.4"
+  allow_unverified_ssl = true
 }
 ```
 
@@ -60,12 +60,30 @@ terraform plan
 ## Step-05: Add a Resource Block to create a new VM
 
 ```t
-resource "esxi_guest" "vmsalehmiri01" {
-  guest_name = "vmsalehmiri01"
-  disk_store = "DS_001"
-  network_interfaces {
-    virtual_network = "VM Network"
+resource "vsphere_virtual_machine" "saleh_vm" {
+  name             = "saleh-vm"
+  resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id
+  datastore_id     = data.vsphere_datastore.ds.id
+
+  num_cpus = 4
+  memory   = 10240
+
+  guest_id = "otherGuest"
+
+  network_interface {
+    network_id   = data.vsphere_network.network.id
+    adapter_type = "vmxnet3"
   }
+
+  disk {
+    label            = "disk0"
+    size             = 10
+    eagerly_scrub    = false
+    thin_provisioned = true
+  }
+  wait_for_guest_net_timeout = 0
+  wait_for_guest_net_routable = false
+  wait_for_guest_ip_timeout = 0
 }
 ```
 

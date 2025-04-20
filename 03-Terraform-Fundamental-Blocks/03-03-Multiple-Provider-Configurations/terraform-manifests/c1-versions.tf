@@ -1,25 +1,28 @@
 # Terraform Block
 terraform {
-  required_version = ">= 1.4.1"
+  required_version = ">= 0.13"
   required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = ">= 4.0"
+    vsphere = {
+      source  = "registry.terraform.io/hashicorp/vsphere"
     }
   }
 }
 
-# Provider-1 for us-east-1 (Default Provider)
-provider "aws" {
-  region = "us-east-1"
-  profile = "default"
+# Provider-1 for cluster1 (Default Provider)
+provider "vsphere" {
+  user                 = "administrator@vsphere.local"
+  password             = "P@ssw0rd"
+  vsphere_server       = "1.2.3.4"
+  allow_unverified_ssl = true
 }
 
-# Provider-2 for us-west-1
-provider "aws" {
-  region = "us-west-1"
-  profile = "default"
-  alias = "aws-west-1"
+# Provider-2 for cluster2
+provider "vsphere" {
+  user                 = "sre@vsphere.local"
+  password             = "1404AdvancePass"
+  vsphere_server       = "11.12.13.14"
+  allow_unverified_ssl = true
+  alias = "cluster2"
 }
 
 
