@@ -1,6 +1,6 @@
 terraform {
   # Required Terraform Version
-  required_version = "~> 0.14"
+  required_version = "~> 1.8"
   # Required Providers and their Versions
   required_providers {
     vsphere = {

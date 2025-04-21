@@ -17,17 +17,17 @@
 - By changing the versions try `terraform init` and observe whats happening
 ```
 Play with Terraform Version
-  required_version = "~> 0.14.3" 
-  required_version = "= 0.14.3"    
-  required_version = "= 0.14.4"  
-  required_version = ">= 0.13"   
-  required_version = "= 0.13"    
-  required_version = "~> 0.13"   
+  required_version = "~> 1.6" 
+  required_version = "= 1.2"    
+  required_version = "= 1.8"  
+  required_version = ">= 1.2"   
+  required_version = "= 1.4"    
+  required_version = "~> 1.4"   
  
 
 # Terraform Block
 terraform {
-  required_version = "~> 0.14"
+  required_version = "~> 1.2"
 }
 
 # To view my Terraform CLI Version installed on my desktop

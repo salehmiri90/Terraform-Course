@@ -14,7 +14,7 @@
 ```
 # Terraform Settings Block
 terraform {
-  required_version = ">= 0.13"
+  required_version = ">= 1.2"
   required_providers {
     vsphere = {
       source  = "registry.terraform.io/hashicorp/vsphere"
