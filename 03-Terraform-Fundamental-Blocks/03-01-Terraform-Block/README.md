@@ -61,6 +61,6 @@ rm -rf .terraform*
 ```
 
 ## References
-- [Terraform Version Constraints](https://www.terraform.io/docs/configuration/version-constraints.html)
-- [Terraform Versions - Best Practices](https://www.terraform.io/docs/configuration/version-constraints.html#best-practices)
+- [Terraform Version Constraints](https://developer.hashicorp.com/terraform/language/expressions/version-constraints)
+- [Terraform Versions - Manage](https://developer.hashicorp.com/terraform/tutorials/configuration-language/versions)
 
