@@ -37,7 +37,6 @@ terraform {
 - Create a Provider Block for VMware
 ```t
 # Provider Block
-# Provider Block
 provider "vsphere" {
   user                 = "administrator@vsphere.local"
   password             = "P@ssw0rd"
