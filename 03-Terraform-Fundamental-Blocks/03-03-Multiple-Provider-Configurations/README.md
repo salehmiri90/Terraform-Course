@@ -51,8 +51,8 @@ terraform plan
 terraform apply -auto-approve
 
 # Verify the same
-1. Verify the created VM in Cluster1
-2. Verify the created VM in Cluster2
+1. Verify the created VM in vCenter1
+2. Verify the created VM in vCenter2
 ```
 
 ## Step-05: Clean-Up 
