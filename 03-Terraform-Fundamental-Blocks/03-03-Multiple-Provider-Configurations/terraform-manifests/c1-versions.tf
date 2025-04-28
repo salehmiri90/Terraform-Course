@@ -8,7 +8,7 @@ terraform {
   }
 }
 
-# Provider-1 for cluster1 (Default Provider)
+# Provider-1 for vcenter1 (Default Provider)
 provider "vsphere" {
   user                 = "administrator@vsphere.local"
   password             = "P@ssw0rd"
@@ -16,7 +16,7 @@ provider "vsphere" {
   allow_unverified_ssl = true
 }
 
-# Provider-2 for cluster2
+# Provider-2 for vcenter2
 provider "vsphere" {
   user                 = "sre@vsphere.local"
   password             = "1404AdvancePass"

@@ -7,7 +7,7 @@
 - Understand about default provider
 - Understand and define multiple provider configurations of same provider
 ```t
-# Provider-1 for cluster1 (Default Provider)
+# Provider-1 for vcenter1 (Default Provider)
 provider "vsphere" {
   user                 = "administrator@vsphere.local"
   password             = "P@ssw0rd"
@@ -15,7 +15,7 @@ provider "vsphere" {
   allow_unverified_ssl = true
 }
 
-# Provider-2 for cluster2
+# Provider-2 for vcenter2
 provider "vsphere" {
   user                 = "sre@vsphere.local"
   password             = "1404AdvancePass"
@@ -27,7 +27,7 @@ provider "vsphere" {
 
 ## Step-03: How to reference the non-default provider configuration in a resource?
 ```t
-# Resource Block to Create VM in Cluster2
+# Resource Block to Create VM in vcenter2
 resource "vsphere_virtual_machine" "resource2_vm" {
   name     = "resource2_vm"
   #<PROVIDER NAME>.<ALIAS>
