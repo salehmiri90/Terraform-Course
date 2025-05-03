@@ -27,7 +27,6 @@ terraform apply
 ```
 - Review **.terraform.lock.hcl**
   - Discuss about versions
-  - Backup `.terraform.lock.hcl` as `.terraform.lock.hcl-FIRST-INIT` 
 ```
 # Backup
 cp .terraform.lock.hcl .terraform.lock.hcl-FIRST-INIT
@@ -41,7 +40,7 @@ terraform init -upgrade
 ```
 - Review **.terraform.lock.hcl**
   - Discuss about vSphere Versions
-  - Compare `.terraform.lock.hcl-FIRST-INIT` & `.terraform.lock.hcl`
+  - Compare `.terraform.lock.hcl-backup` & `.terraform.lock.hcl`
 
 ## Step-05: Apply Terraform configuration with latest vSphere Provider
 - Should fail due to Virtual Machine related latest changes came in vSphere v2.12 provider when compared to vSphere v2.8 provider
@@ -66,7 +65,7 @@ terraform apply
 terraform destroy
 
 # Delete Terraform Files
-rm -rf .terraform    # We are not removing files named ".terraform.lock.hcl, .terraform.lock.hcl-ORIGINAL" which are needed for this demo for you.
+rm -rf .terraform    # We are not removing files named ".terraform.lock.hcl, .terraform.lock.hcl-backup" which are needed for this demo for you.
 rm -rf terraform.tfstate*
 ```
 
