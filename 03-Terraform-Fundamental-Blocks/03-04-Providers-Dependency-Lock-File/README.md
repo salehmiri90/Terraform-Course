@@ -29,7 +29,7 @@ terraform apply
   - Discuss about versions
 ```
 # Backup
-cp .terraform.lock.hcl .terraform.lock.hcl-FIRST-INIT
+cp .terraform.lock.hcl .terraform.lock.hcl-backup
 ```
 
 ## Step-04: Upgrade the vSphere provider version
