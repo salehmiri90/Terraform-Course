@@ -15,5 +15,4 @@ provider "vsphere" {
   password             = "P@ssw0rd"
   vsphere_server       = "1.2.3.4"
   allow_unverified_ssl = true
-  alias = "cluster2"
 }
