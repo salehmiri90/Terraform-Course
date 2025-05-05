@@ -46,7 +46,7 @@ Observation-1: Nothing happens during the first run from terraform state perspec
 Observation-2: From Resource Behavior perspective you can see "+ create", we are creating 
 
 # Create Resources 
-terraform apply -auto-approve
+terraform apply
 Observation: 
 1) Creates terraform.tfstate file in local working directory
 2) Creates actual resource in vCenter
@@ -118,4 +118,5 @@ rm -rf terraform.tfstate*
 
 ## References
 - [Terraform State](https://www.terraform.io/docs/language/state/index.html)
+- [Terraform fmt](https://developer.hashicorp.com/terraform/cli/commands/fmt)
 - [Manipulating Terraform State](https://www.terraform.io/docs/cli/state/index.html)
