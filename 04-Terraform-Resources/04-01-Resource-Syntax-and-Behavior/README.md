@@ -71,11 +71,12 @@ Observation:
 - Review `terraform.tfstate` file step by step
 
 
-## Step-07: Resource: Update In-Place: Make changes by adding new tag to VM Instance 
-- Add a new tag in `miri-instance.tf`
+## Step-07: Resource: Update In-Place: Make changes by changing CPU/Memory on VM Instance 
+- Change CPU Memory value in `c2-saleh-vm.tf`
 ```
-# Add this for VM Instance tags
-    "tag1" = "Update-test-1"
+# Change CPU Memory for VM Instance
+    num_cpus = 6
+    memory   = 6144
 ```
 - Review Terraform Plan
 ```
@@ -85,7 +86,7 @@ Observation: You should see "~ update in-place"
 "Plan: 0 to add, 1 to change, 0 to destroy."
 
 # Create / Update Resources 
-terraform apply -auto-approve
+terraform apply
 Observation: "Apply complete! Resources: 0 added, 1 changed, 0 destroyed."
 ```
 - **Important Note:** Here we have seen example for **update in-place**
