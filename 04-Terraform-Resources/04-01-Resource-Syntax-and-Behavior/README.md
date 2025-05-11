@@ -92,15 +92,17 @@ Observation: "Apply complete! Resources: 0 added, 1 changed, 0 destroyed."
 - **Important Note:** Here we have seen example for **update in-place**
 
 
-## Step-08: Resource: Destroy Resource
+## Step-08: Resource: Destroy and Re-create Resource
+Use codes in terraform-manifests-2 directory.
 ```
-# Destroy Resource
-terraform destroy 
+# Destroy and recreate Resources
+terraform apply 
 Observation: 
-1) - destroy
-2) # VM_instance.saleh_vm will be destroyed
-3) Plan: 0 to add, 0 to change, 1 to destroy
-4) Destroy complete! Resources: 1 destroyed
+1) -/+ destroy and then create replacement
+2) # null_resource.trigger must be replaced
+3) # vsphere_virtual_machine.saleh_vm will be replaced due to changes in replace_triggered_by
+4) Plan: 2 to add, 0 to change, 2 to destroy
+5) Apply complete! Resources: 2 added, 0 changed, 2 destroyed.
 ```
 
 ## Step-09: Understand Desired and Current States (High-Level Only)
