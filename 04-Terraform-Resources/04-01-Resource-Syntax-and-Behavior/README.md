@@ -105,11 +105,22 @@ Observation:
 5) Apply complete! Resources: 2 added, 0 changed, 2 destroyed.
 ```
 
-## Step-09: Understand Desired and Current States (High-Level Only)
+## Step-09: Destroy Resource
+```
+# Destroy Resource
+terraform destroy
+Observation:
+1) - destroy
+2) vsphere_virtual_machine.saleh_vm will be destroyed
+3) Plan: 0 to add, 0 to change, 2 to destroy
+4) Destroy complete! Resources: 1 destroyed
+```
+
+## Step-10: Understand Desired and Current States (High-Level Only)
 - **Desired State:** Local Terraform Manifest (All *.tf files)
 - **Current State:**  Real Resources present in your cloud
 
-## Step-10: Clean-Up
+## Step-11: Clean-Up
 ```
 # Destroy Resource
 terraform destroy -auto-approve 
