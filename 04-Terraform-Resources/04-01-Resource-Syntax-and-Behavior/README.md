@@ -70,8 +70,11 @@ Observation:
 - Manual editing of Terraform state files is highly not recommended
 - Review `terraform.tfstate` file step by step
 
+## Step-07: Understand Desired and Current States (High-Level Only)
+- **Desired State:** Local Terraform Manifest (All *.tf files)
+- **Current State:**  Real Resources present in your cloud
 
-## Step-07: Resource: Update In-Place: Make changes by changing CPU/Memory on VM Instance 
+## Step-08: Resource: Update In-Place: Make changes by changing CPU/Memory on VM Instance 
 - Change CPU Memory value in `c2-saleh-vm.tf`
 ```
 # Change CPU Memory for VM Instance
@@ -92,7 +95,7 @@ Observation: "Apply complete! Resources: 0 added, 1 changed, 0 destroyed."
 - **Important Note:** Here we have seen example for **update in-place**
 
 
-## Step-08: Resource: Destroy and Re-create Resource
+## Step-09: Resource: Destroy and Re-create Resource
 Use codes in terraform-manifests-2 directory.
 ```
 # Destroy and recreate Resources
@@ -105,7 +108,7 @@ Observation:
 5) Apply complete! Resources: 2 added, 0 changed, 2 destroyed.
 ```
 
-## Step-09: Destroy Resource
+## Step-10: Destroy Resource
 ```
 # Destroy Resource
 terraform destroy
@@ -115,10 +118,6 @@ Observation:
 3) Plan: 0 to add, 0 to change, 2 to destroy
 4) Destroy complete! Resources: 1 destroyed
 ```
-
-## Step-10: Understand Desired and Current States (High-Level Only)
-- **Desired State:** Local Terraform Manifest (All *.tf files)
-- **Current State:**  Real Resources present in your cloud
 
 ## Step-11: Clean-Up
 ```
