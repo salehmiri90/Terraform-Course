@@ -4,20 +4,18 @@
 - Understand Resource Meta-Argument `count`
 - Also implement count and count index practically 
 
-## Step-02: Create 5 EC2 Instances using Terraform
-- In general, 1 EC2 Instance Resource in Terraform equals to 1 EC2 Instance in Real AWS Cloud
-- 5 EC2 Instance Resources = 5 EC2 Instances in AWS Cloud
+## Step-02: Create 5 VM Instances using Terraform
+- In general, 1 VM Instance Resource in Terraform equals to 1 VM Instance in Real World Cloud
+- 5 VM Instance Resources = 5 VM Instances in world Cloud
 - With `Meta-Argument count` this is going to become super simple. 
 - Lets see how. 
 ```t
-# Create EC2 Instance
-resource "aws_instance" "web" {
-  ami = "ami-047a51fa27710816e" # Amazon Linux
-  instance_type = "t2.micro"
-  count = 5
-  tags = {
-    "Name" = "web"
-  }
+# Create VM Instance
+# Resource Block
+resource "vsphere_virtual_machine" "saleh_vm" {
+  count    = 5
+  name     = "saleh-vm-${count.index}"
+  ...
 }
 ```
 - **Execute Terraform Commands**
@@ -31,25 +29,21 @@ terraform validate
 # Terraform Plan to Verify what it is going to create / update / destroy
 terraform plan
 
-# Terraform Apply to Create EC2 Instance
+# Terraform Apply to Create VM Instance
 terraform apply 
 ```
-- Verify EC2 Instances and its Name
+- Verify VM Instances and its Name
 
 
 ## Step-03: Understand about count index
-- If we currently see all our EC2 Instances has the same name `web`
-- Lets name them by using count index `web-0, web-1, web-2, web-3, web-4`
+- If we currently see all our VM Instances has the same name `saleh-vm`
+- Lets name them by using count index `saleh-vm-0, saleh-vm-1, saleh-vm-2, saleh-vm-3, saleh-vm-4`
 ```t
-# Create EC2 Instance
-resource "aws_instance" "web" {
-  ami = "ami-047a51fa27710816e" # Amazon Linux
-  instance_type = "t2.micro"
-  count = 5
-  tags = {
-    #"Name" = "web"
-    "Name" = "web-${count.index}"
-  }
+# Create VM Instance
+resource "vsphere_virtual_machine" "saleh_vm" {
+  count    = 5
+  name     = "saleh-vm-${count.index}"
+  ...
 }
 ```
 - **Execute Terraform Commands**
@@ -60,10 +54,10 @@ terraform validate
 # Terraform Plan to Verify what it is going to create / update / destroy
 terraform plan
 
-# Terraform Apply to Create EC2 Instance
+# Terraform Apply to Create VM Instance
 terraform apply 
 ```
-- Verify EC2 Instances
+- Verify VM Instances
 
 
 ## Step-04: Destroy Terraform Resources
