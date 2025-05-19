@@ -14,7 +14,7 @@
 # Resource Block
 resource "vsphere_virtual_machine" "saleh_vm" {
   count    = 5
-  name     = "saleh-vm-${count.index}"
+  name     = "saleh-vm"
   ...
 }
 ```
@@ -58,7 +58,6 @@ terraform plan
 terraform apply 
 ```
 - Verify VM Instances
-
 
 ## Step-04: Destroy Terraform Resources
 ```t
