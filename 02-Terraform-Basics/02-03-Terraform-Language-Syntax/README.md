@@ -14,6 +14,7 @@
 - Understand Arguments
 - Understand Identifiers
 - Understand Comments
+- Understand Datatypes
 - [Terraform Configuration](https://www.terraform.io/docs/configuration/index.html)
 - [Terraform Configuration Syntax](https://www.terraform.io/docs/configuration/syntax.html)
 ```t
@@ -29,6 +30,25 @@ resource "vsphere_virtual_machine" "saleh_vm" { # BLOCK
   datastore_id     = data.vsphere_datastore.ds.id # Argument with value as expression (Variable value replaced from varibales.tf
   ...
 }
+```
+
+# Datatypes Example
+```
+type = "string"
+number = 2
+boolean = true  # true or flase
+
+List:
+list1 = ["item1", "item2", "item3"]
+
+Maps:
+map1 = {key1 = "value1", key2 = "value2" , key3 = "value3"}
+
+locals {
+  my_map =  {"name" = "saleh miri" , "age" = 30, "is_admin" = true}
+}
+
+locals.my_map["age"]
 ```
 
 ## Step-03: Understand about Arguments, Attributes and Meta-Arguments.
