@@ -7,33 +7,28 @@
 
 ## Step-02: Implement for_each with Maps
 - **Reference Folder:** v1-for_each-maps
-- **Use case:** Create four S3 buckets using for_each maps 
-- **c2-s3bucket.tf**
+- **Use case:** Create five VMs using for_each maps with different disk capacity
+- **c2-saleh-vm.tf**
 ```t
-# Create S3 Bucket per environment with for_each and maps
-# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket
-
-resource "aws_s3_bucket" "mys3bucket" {
-
+resource "vsphere_virtual_machine" "saleh_vm" {
   # for_each Meta-Argument
   for_each = {
-    dev  = "my-dapp-bucket"
-    qa   = "my-qapp-bucket"
-    stag = "my-sapp-bucket"
-    prod = "my-papp-bucket"
+    "vm-a" = 5
+    "vm-b" = 10
+    "vm-c" = 15
+    "vm-d" = 20
+    "vm-e" = 25
   }
-
-  bucket = "${each.key}-${each.value}"
-  #acl    = "private" # This argument is deprecated, so commenting it. 
-  
-
-  tags = {
-    Environment = each.key
-    bucketname  = "${each.key}-${each.value}"
-    eachvalue   = each.value
+  name     = "saleh-${each.key}"
+  ...
+  disk {
+    # for_each Meta-Argument
+    label            = "saleh-${each.key}-disk0"
+    size             = each.value
+    eagerly_scrub    = false
+    thin_provisioned = true
   }
 }
-
 ```
 
 ## Step-03: Execute Terraform Commands
@@ -53,16 +48,16 @@ terraform fmt
 # Generate Terraform Plan
 terraform plan
 Observation: 
-1) Four buckets creation will be generated in plan
+1) Five VMs creation will be generated in plan
 2) Review Resource Names ResourceType.ResourceLocalName[each.key]
-2) Review bucket name (each.key+each.value)
-3) Review bucket tags
+2) Review disk names (each.key)
+3) Review disk sizes (each.value)
 
 # Create Resources
 terraform apply
 Observation: 
-1) 4 S3 buckets should be created
-2) Review bucket names and tags in AWS Management console
+1) 5 VMs should be created
+2) Review VM names, disk names and disk sizes in vCenter Management console
 
 # Destroy Resources
 terraform destroy
@@ -75,13 +70,19 @@ rm -rf terraform.tfstate*
 
 ## Step-04: Implement for_each with toset "Strings"
 - **Reference Folder:** v2-for_each-toset
-- **Use case:** Create four IAM Users using for_each toset strings 
-- **c2-iamuser.tf**
+- **Use case:** Create 3 VMs using for_each toset strings 
+- **c2-saleh-vm.tf**
 ```t
-# Create 4 IAM Users
-resource "aws_iam_user" "myuser" {
-  for_each = toset( ["Jack", "James", "Madhu", "Dave"] )
-  name     = each.key
+# Variable Block
+variable "vm_names" {
+  default = ["tosetvm-01", "tosetvm-02", "tosetvm-03"]
+}
+
+# Resource Block
+resource "vsphere_virtual_machine" "saleh_vm" {
+  for_each = toset(var.vm_names)
+  name     = "saleh-${each.key}"
+  ...
 }
 ```
 
@@ -102,15 +103,15 @@ terraform fmt
 # Generate Terraform Plan
 terraform plan
 Observation: 
-1) Four IAM users creation will be generated in plan
+1) Three VMs creation will be generated in plan
 2) Review Resource Names ResourceType.ResourceLocalName[each.key]
-2) Review IAM User name (each.key)
+2) Review VMs name (each.key)
 
 # Create Resources
 terraform apply
 Observation: 
-1) 4 IAM users should be created
-2) Review IAM users in AWS Management console
+1) Three VMs should be created
+2) Review VMs in vCenter Management console
 
 # Destroy Resources
 terraform destroy
@@ -122,5 +123,3 @@ rm -rf terraform.tfstate*
 
 ## Reference
 - [Resource Meta-Argument: for_each](https://www.terraform.io/docs/language/meta-arguments/for_each.html)
-- [Resource: AWS S3 Bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket)
-- [Resource: AWS IAM User](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_user)
