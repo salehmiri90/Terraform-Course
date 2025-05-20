@@ -4,8 +4,8 @@ resource "vsphere_virtual_machine" "resource1_vm" {
   resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id
   datastore_id     = data.vsphere_datastore.ds.id
 
-  num_cpus = 4
-  memory   = 10240
+  num_cpus = 1
+  memory   = 1024
 
   guest_id = "otherGuest"
 
@@ -16,7 +16,7 @@ resource "vsphere_virtual_machine" "resource1_vm" {
 
   disk {
     label            = "disk0"
-    size             = 10
+    size             = 5
     eagerly_scrub    = false
     thin_provisioned = true
   }

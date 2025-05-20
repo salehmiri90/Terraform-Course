@@ -30,8 +30,8 @@ resource "vsphere_virtual_machine" "saleh_vm" {
   for_each = toset(var.vm_names)
   name     = "saleh-${each.key}"
 //
-  num_cpus = 2
-  memory   = 2048
+  num_cpus = 1
+  memory   = 1024
 
   resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id
   datastore_id     = data.vsphere_datastore.ds.id

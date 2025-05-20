@@ -22,16 +22,16 @@ data "vsphere_network" "network" {
 resource "vsphere_virtual_machine" "saleh_vm" {
   // added in this section
   for_each = {
-    "vm-a" = 5
-    "vm-b" = 10
-    "vm-c" = 15
-    "vm-d" = 20
-    "vm-e" = 25
+    "vm-a" = 6
+    "vm-b" = 7
+    "vm-c" = 8
+    "vm-d" = 9
+    "vm-e" = 10
   }
   name     = "saleh-${each.key}"
   //
-  num_cpus = 2
-  memory   = 2048
+  num_cpus = 1
+  memory   = 1024
 
   resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id
   datastore_id     = data.vsphere_datastore.ds.id

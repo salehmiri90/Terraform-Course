@@ -23,8 +23,8 @@ data "vsphere_network" "network" {
 # Resource Block
 resource "vsphere_virtual_machine" "saleh_vm" {
   name     = "saleh-lifecycle1"
-  num_cpus = 4
-  memory   = 4096
+  num_cpus = 1
+  memory   = 1024
 
   resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id
   datastore_id     = data.vsphere_datastore.ds.id
@@ -37,7 +37,7 @@ resource "vsphere_virtual_machine" "saleh_vm" {
 
   disk {
     label            = "disk0"
-    size             = 10
+    size             = 5
     eagerly_scrub    = false
     thin_provisioned = true
   }

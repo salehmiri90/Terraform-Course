@@ -35,7 +35,7 @@ resource "vsphere_virtual_machine" "saleh_vm" {
 
   disk {
     label            = "disk0"
-    size             = 10
+    size             = 5
     eagerly_scrub    = false
     thin_provisioned = true
   }
