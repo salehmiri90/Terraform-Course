@@ -1,19 +1,18 @@
-# Terraform Block
+# Terraform Settings Block
 terraform {
-  required_version = ">= 1.4" 
+  required_version = "~> 1.8.0"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.0"
+    vsphere = {
+      source  = "hashicorp/vsphere"
+      version = "2.8.1"
     }
   }
 }
+
 # Provider Block
-provider "aws" {
-  region  = "us-east-1"
-  profile = "default"
+provider "vsphere" {
+  user                 = "administrator@vsphere.local"
+  password             = "P@ssw0rd"
+  vsphere_server       = "1.2.3.4"
+  allow_unverified_ssl = true
 }
-/*
-Note-1:  AWS Credentials Profile (profile = "default") configured on your local desktop terminal  
-$HOME/.aws/credentials
-*/
