@@ -21,6 +21,8 @@ data "vsphere_network" "network" {
 # Resource Block
 resource "vsphere_virtual_machine" "saleh_vm" {
   name     = "saleh-lifecycle3"
+  #name     = "saleh-lifecycle3-new"
+
   num_cpus = 1
   memory   = 1024
 
