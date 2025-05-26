@@ -1,21 +1,20 @@
 # Input Variables
-variable "aws_region" {
-  description = "Region in which AWS Resources to be created"
+variable "vm_name" {
+  description = "the name of virtual machine"
   type        = string
-  default     = "us-east-1"
 }
 
-variable "db_username" {
-  description = "AWS RDS Database Administrator Username"
-  type        = string
-  sensitive   = true
+variable "vm_cpu" {
+  description = "cpu core counts"
+  type        = number
 }
 
-variable "db_password" {
-  description = "AWS RDS Database Administrator Password"
-  type        = string
-  sensitive   = true
+variable "vm_ram" {
+  description = "ram value based on MegaBytes"
+  type        = number
 }
 
-
-
+variable "vcenter_pass" {
+  description = "the password for vcenter gui"
+  type        = string
+}
