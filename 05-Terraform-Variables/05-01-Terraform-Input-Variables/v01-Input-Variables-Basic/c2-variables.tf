@@ -8,7 +8,7 @@ variable "vm_name" {
 variable "vm_cpu" {
   description = "cpu core counts"
   type        = number
-  default     = 2
+  default     = 1
 }
 
 variable "vm_ram" {
