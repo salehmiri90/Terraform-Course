@@ -1,2 +1,3 @@
-ec2_instance_count = 1
-ec2_instance_type  = "t3.small"
+vm_name = "tfvars-vm"
+vm_cpu  = 2
+vm_ram  = 2048
