@@ -2,6 +2,7 @@
 variable "vm_name" {
   description = "the name of virtual machine"
   type        = string
+  sensitive   = true
 }
 
 variable "vm_cpu" {
