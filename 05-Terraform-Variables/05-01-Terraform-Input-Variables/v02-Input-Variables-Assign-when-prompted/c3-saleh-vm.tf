@@ -1,49 +1,45 @@
-# Create Security Group - SSH Traffic
-resource "aws_security_group" "vpc-ssh" {
-  name        = "vpc-ssh"
-  description = "Dev VPC SSH"
-  ingress {
-    description = "Allow Port 22"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-  egress {
-    description = "Allow all IP and Ports outbound"
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+# Data Block
+data "vsphere_datacenter" "dc" {
+  name = "Datacenter-lab"
 }
 
-# Create Security Group - Web Traffic
-resource "aws_security_group" "vpc-web" {
-  name        = "vpc-web"
-  description = "Dev VPC Web"
+data "vsphere_compute_cluster" "cluster" {
+  name          = "vSAN-lab"
+  datacenter_id = data.vsphere_datacenter.dc.id
+}
 
-  ingress {
-    description = "Allow Port 80"
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+data "vsphere_datastore" "ds" {
+  name          = "vsanDatastore" 
+  datacenter_id = data.vsphere_datacenter.dc.id
+}
+
+data "vsphere_network" "network" {
+  name          = "VM Network"
+  datacenter_id = data.vsphere_datacenter.dc.id
+}
+  
+# Resource Block
+resource "vsphere_virtual_machine" "saleh_vm" {
+  name     = var.vm_name
+  num_cpus = var.vm_cpu
+  memory   = var.vm_ram
+
+  resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id
+  datastore_id     = data.vsphere_datastore.ds.id
+  guest_id = "otherGuest"
+
+  network_interface {
+    network_id   = data.vsphere_network.network.id
+    adapter_type = "vmxnet3"
   }
 
-  ingress {
-    description = "Allow Port 443"
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+  disk {
+    label            = "disk0"
+    size             = 5
+    eagerly_scrub    = false
+    thin_provisioned = true
   }
-
-  egress {
-    description = "Allow all IP and Ports outbound"
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+  wait_for_guest_net_timeout  = 0
+  wait_for_guest_net_routable = false
+  wait_for_guest_ip_timeout   = 0
 }
