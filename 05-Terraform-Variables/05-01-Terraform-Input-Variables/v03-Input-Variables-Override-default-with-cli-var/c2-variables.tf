@@ -1,24 +1,18 @@
 # Input Variables
-variable "aws_region" {
-  description = "Region in which AWS resources to be created"
+variable "vm_name" {
+  description = "the name of virtual machine"
   type        = string
-  default     = "us-east-1"
+  default     = "saleh-vm"
 }
 
-variable "ec2_ami_id" {
-  description = "AMI ID"
-  type        = string
-  default     = "ami-0915bcb5fa77e4892" # Amazon2 Linux AMI ID
-}
-
-variable "ec2_instance_count" {
-  description = "EC2 Instance Count"
+variable "vm_cpu" {
+  description = "cpu core counts"
   type        = number
   default     = 2
 }
 
-variable "ec2_instance_type" {
-  description = "EC2 Instance Type"
-  type = string
-  default = "t3.micro"
+variable "vm_ram" {
+  description = "ram value based on MegaBytes"
+  type        = number
+  default     = 1024
 }
