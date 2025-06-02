@@ -105,5 +105,4 @@ terraform apply
 ## References
 - [Terraform Variable Definition Precedence](https://www.terraform.io/docs/language/values/variables.html#variable-definition-precedence)
 - [Terraform Input Variables](https://www.terraform.io/docs/language/values/variables.html)
-security_group)
 - [Sensitive Variables - Additional Reference](https://learn.hashicorp.com/tutorials/terraform/sensitive-variables)
