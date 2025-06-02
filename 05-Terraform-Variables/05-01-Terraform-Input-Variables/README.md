@@ -73,14 +73,13 @@ This repository contains practical examples and scenarios to help you learn and 
 - Terraform will `redact` these values in command output and log files, and raise an error when it detects that they will be exposed in other ways.
 - **Important Note-1:** Never check-in `secrets.tfvars` to git repositories
 - **Important Note-2:** Terraform state file contains values for these sensitive variables `terraform.tfstate`. You must keep your state file secure to avoid exposing this data.
-```t
+
 
 ### 11. Using the `file()` Function
 - Reading external text files (e.g., SSH public keys, config scripts) and passing their content as variables
 - **Reference Sub folder:** v11-File-Function
 - Understand about [Terraform File Function](https://www.terraform.io/docs/language/functions/file.html)
 
----
 
 ## 🧪 How to Run Labs
 
@@ -92,14 +91,16 @@ Each folder (e.g., `v01`, `v02`, ...) contains a separate lab with:
 ### Example:
 ```
 cd v04-Input-Variables-Override-with-Environment-Variables
+```
 
 # Export variable as environment variable
+```
 export TF_VAR_vm_cpu=4
 
 terraform init
 terraform plan
 terraform apply
-```t
+```
 
 ## References
 - [Terraform Variable Definition Precedence](https://www.terraform.io/docs/language/values/variables.html#variable-definition-precedence)
