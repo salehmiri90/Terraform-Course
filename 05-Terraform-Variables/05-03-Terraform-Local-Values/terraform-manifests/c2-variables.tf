@@ -1,21 +1,22 @@
 # Input Variables
-variable "aws_region" {
-  description = "Region in which AWS Resources to be created"
-  type = string
-  default = "us-east-1"
+variable "vm_cpu" {
+  description = "cpu core counts"
+  type        = number
+  default     = 1
 }
 
-# App Name S3 Bucket used for
-variable "app_name" {
-  description = "Application Name"
-  type = string
+variable "vm_ram" {
+  description = "ram value based on MegaBytes"
+  type        = number
+  default     = 1024
 }
 
-# Environment Name
-variable "environment_name" {
-  description = "Environment Name"
-  type = string
+variable "env" {
+  description = "Deployment environment (e.g. dev, prod)"
+  type        = string
 }
 
-
-
+variable "project_name" {
+  description = "Name of the project"
+  type        = string
+}

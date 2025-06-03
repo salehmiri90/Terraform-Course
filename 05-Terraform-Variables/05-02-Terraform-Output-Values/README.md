@@ -58,7 +58,6 @@ output "vm_id" {
   value       = vsphere_virtual_machine.saleh_vm.id
   sensitive   = true
 }
-
 ```
 - Test the flow
 ```t
