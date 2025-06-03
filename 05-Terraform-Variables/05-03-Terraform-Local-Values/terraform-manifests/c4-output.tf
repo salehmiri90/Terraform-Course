@@ -1,7 +1,7 @@
 # Define output variables
 output "virtual_machine_name" {
   description = "The name of the virtual machine"
-  value       = vsphere_virtual_machine.saleh_vm.name
+  value       = local.vm_name
 }
 
 output "vm_state" {
