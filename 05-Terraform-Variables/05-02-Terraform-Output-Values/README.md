@@ -7,10 +7,11 @@
 - Generate machine-readable output
 
 ## Step-02: Basics of Output Values
-- **Reference Sub folder:** terraform-manifests
+- **Reference Sub folder:** v01-Output-Variables-Basic
 - Understand Output Values
 - You can export both Argument & Attribute References
 - [Terraform AWS EC2 Instance](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance)
+
 ```t
 # Initialize Terraform
 terraform init
@@ -27,9 +28,13 @@ terraform plan
 # Create Resources
 terraform apply -auto-approve
 
-# Access Application
-http://<Public-IP>
-http://<Public-DNS>
+# Verify Plan
+Plan: 1 to add, 0 to change, 0 to destroy.
+Changes to Outputs:
+  + virtual_machine_name = "saleh-vm"
+  + vm_id                = (known after apply)
+  + vm_state             = (known after apply)
+
 ```
 
 ## Step-03: Query Terraform Outputs
@@ -37,7 +42,7 @@ http://<Public-DNS>
 ```t
 # Terraform Output Commands
 terraform output
-terraform output ec2_publicdns
+terraform output virtual_machine_name
 ```
 
 
@@ -45,14 +50,15 @@ terraform output ec2_publicdns
 - We can redact the sensitive outputs using `sensitve = true` in output block
 - This will only redact the cli output for terraform plan and apply
 - When you query using `terraform output`, you will be able to fetch exact values from `terraform.tfstate` files
-- Add `sensitve = true` for output `ec2_publicdns`
+- Add `sensitve = true` for output `vm_id`
 ```t
-# Attribute Reference - Create Public DNS URL with http:// appended
-output "ec2_publicdns" {
-  description = "Public DNS URL of an EC2 Instance"
-  value = "http://${aws_instance.my-ec2-vm.public_dns}"
-  sensitive = true
+# Attribute Reference 
+output "vm_id" {
+  description = "The ID of the VM"
+  value       = vsphere_virtual_machine.saleh_vm.id
+  sensitive   = true
 }
+
 ```
 - Test the flow
 ```t
