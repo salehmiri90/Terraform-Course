@@ -28,7 +28,9 @@ Another use case (at least for me) for locals is to shorten references on upstre
 ## Step-02: Create / Review Terraform configuration files
 - c1-versions.tf
 - c2-variables.tf
-- c3-s3-bucket.tf
+- c3-saleh-vm.tf
+- c4-output.tf
+- c5-outputfile.tf
 
 
 ## Step-03: Test the Terraform configuration using commands
