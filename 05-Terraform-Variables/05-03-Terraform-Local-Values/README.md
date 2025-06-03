@@ -49,6 +49,46 @@ terraform plan
 
 # Create Resources (Optional)
 terraform apply -auto-approve
+
+# Enter information on the fly
+var.env
+  Deployment environment (e.g. dev, prod)
+
+  Enter a value: dev
+
+var.project_name
+  Name of the project
+
+  Enter a value: saleh
+```
+
+# Verify VM Name
+```t
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + virtual_machine_name = "dev-saleh-vm"
+  + vm_id                = (sensitive value)
+  + vm_state             = (known after apply)
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+local_file.output_file: Creating...
+local_file.output_file: Creation complete after 0s [id=e410398687c36c4e3ae1528be41]
+vsphere_virtual_machine.saleh_vm: Creating...
+vsphere_virtual_machine.saleh_vm: Creation complete after 3s [id=4233f0f5-f472-bf7dc8b7cc03]
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+virtual_machine_name = "dev-saleh-vm"
+vm_id = <sensitive>
+vm_state = "on"
 ```
 
 ## References
