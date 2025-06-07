@@ -1,24 +1,25 @@
 resource "vsphere_virtual_machine" "this" {
   name                   = var.vm_name
-  resource_pool_id       = var.resource_pool_id
-  datastore_id           = var.datastore_id
+  resource_pool_id       = data.vsphere_compute_cluster.cluster.resource_pool_id
+  datastore_id           = data.vsphere_datastore.datastore.id
   num_cpus               = var.num_cpus
   memory                 = var.memory * 1024
   firmware               = "efi"
-  guest_id               = var.guest_id
+  guest_id               = data.vsphere_virtual_machine.template.guest_id
 
   network_interface {
-    network_id   = var.network_id
-    adapter_type = var.adapter_type
+    network_id   = data.vsphere_network.network.id
+    adapter_type = data.vsphere_virtual_machine.template.network_interface_types[0]
   }
   disk {
     label            = "${var.vm_name}-disk0"
     size             = data.vsphere_virtual_machine.template.disks.0.size
+    thin_provisioned = data.vsphere_virtual_machine.template.disks.0.thin_provisioned
     unit_number      = 0
   }
 
   clone {
-    template_uuid = var.template_uuid
+    template_uuid = data.vsphere_virtual_machine.template.uuid
     timeout       = 600
 
     customize {
