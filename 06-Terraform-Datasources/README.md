@@ -25,7 +25,7 @@ These values are later used (typically) in defining virtual machines or other re
 ## Step-03: Reference the information in c3-main.tf
 ```t
   datastore_id     = data.vsphere_datastore.ds.id
-  network_id   = data.vsphere_network.network.id
+  network_id       = data.vsphere_network.network.id
   resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id 
 ```
 
