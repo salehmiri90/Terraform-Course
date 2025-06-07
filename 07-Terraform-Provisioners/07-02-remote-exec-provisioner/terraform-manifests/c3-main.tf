@@ -46,7 +46,7 @@ resource "vsphere_virtual_machine" "this" {
       type        = "ssh"
       user        = var.ssh_user
       password    = var.ssh_pass
-      host        = self.default_ip_address
+      host        = self.default_ip_address  # Understand what is "self"
     }
   }
 }
