@@ -1,31 +1,18 @@
-# Terraform Block
+# Terraform Settings Block
 terraform {
-  required_version = ">= 1.4" 
+  required_version = "~> 1.8.0"
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.0"
+    vsphere = {
+      source  = "hashicorp/vsphere"
+      version = "2.8.1"
     }
-  }
-  # Adding Backend as S3 for Remote State Storage
-  backend "s3" {
-    bucket = "terraform-stacksimplify"
-    key    = "dev/terraform.tfstate"
-    region = "us-east-1" 
-/*
-    # Enable during Step-09     
-    # For State Locking
-    dynamodb_table = "terraform-dev-state-table"    
-*/    
   }
 }
 
 # Provider Block
-provider "aws" {
-  region  = var.aws_region
-  profile = "default"
+provider "vsphere" {
+  user                 = "administrator@vsphere.local"
+  password             = "P@ssw0rd"
+  vsphere_server       = "1.2.3.4"
+  allow_unverified_ssl = true
 }
-/*
-Note-1:  AWS Credentials Profile (profile = "default") configured on your local desktop terminal  
-$HOME/.aws/credentials
-*/

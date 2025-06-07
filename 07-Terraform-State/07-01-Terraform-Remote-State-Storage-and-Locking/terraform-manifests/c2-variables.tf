@@ -1,13 +1,18 @@
 # Input Variables
-variable "aws_region" {
-  description = "Region in which AWS Resources to be created"
-  type = string
-  default = "us-east-1"
+variable "vm_name" {
+  description = "the name of virtual machine"
+  type        = string
+  default     = "saleh-vm"
 }
 
-variable "instance_type" {
-  description = "EC2 Instance Type - Instance Sizing"
-  type = string
-  #default = "t2.micro"
-  default = "t2.small"
+variable "vm_cpu" {
+  description = "cpu core counts"
+  type        = number
+  default     = 1
+}
+
+variable "vm_ram" {
+  description = "ram value based on MegaBytes"
+  type        = number
+  default     = 1024
 }
