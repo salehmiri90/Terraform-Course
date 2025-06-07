@@ -1,25 +1,32 @@
 # Terraform Datasources
 
 ## Step-01: Introduction
-- Understand about Datasources in Terraform
-- Implement a sample usecase with Datasources.
-- Get the latest Amazon Linux 2 AMI ID using datasources and reference that value when creating EC2 Instance resource `ami = data.aws_ami.amzlinux.id`
+- Understand how **Datasources** work in Terraform with **vSphere provider**
+- Learn how to fetch existing infrastructure info (like datacenter, compute cluster, datastore, and network)
+- Use these data blocks as inputs to build dynamic and reusable VM configurations
 
-## Step-02: Create a Datasource to fetch latest AMI ID
-- Create or review manifest `c6-ami-datasource.tf`
-- Go to AWS Mgmt Console -> Services -> EC2 -> Images -> AMI 
-- Search for "Public Images" -> Provide AMI ID
-  - We can get AMI Name format
-  - We can get Owner Name
-  - Visibility
-  - Platform
-  - Root Device Type
-  - and many more info here. 
-- Accordingly using this information build your filters in datasource
+# This configuration retrieves information about:
+- A **Datacenter** named `Datacenter-lab`
+- A **Compute Cluster** named `vSAN-lab`
+- A **Datastore** named `vsanDatastore`
+- A **Network** named `VM Network`
 
-## Step-03: Reference the datasource in ec2-instance.tf
+These values are later used (typically) in defining virtual machines or other resources — without hardcoding their IDs.
+
+## Step-02: Find a Datasource to fetch it's information
+- Review manifest `c4-datasource.tf`
+- Go to vCenter Mgmt Console -> 
+- Verify information about:
+  * Datacenter Name
+  * Cluster Name
+  * Datastore Name
+  * Network Name
+
+## Step-03: Reference the information in c3-main.tf
 ```t
-  ami           = data.aws_ami.amzlinux.id 
+  datastore_id     = data.vsphere_datastore.ds.id
+  network_id   = data.vsphere_network.network.id
+  resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id 
 ```
 
 ## Step-04: Test using Terraform commands
@@ -39,13 +46,9 @@ terraform plan
 # Create Resources (Optional)
 terraform apply -auto-approve
 
-# Access Application
-http://<Public-DNS>
-
 # Destroy Resources
 terraform destroy -auto-approve
 ```
 
-
 ## References
-- [AWS EC2 AMI Datasource](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami)
+- [vSphere Datasource](https://registry.terraform.io/providers/vmware/vsphere/latest/docs)

@@ -1,22 +1,18 @@
 # Input Variables
-variable "aws_region" {
-  description = "Region in which AWS Resources to be created"
-  type = string
-  default = "us-east-1"
+variable "vm_name" {
+  description = "the name of virtual machine"
+  type        = string
+  default     = "saleh-vm"
 }
 
-/* 
-# Commented as we are going to get AMI ID from Datasource aws_ami
-variable "ec2_ami_id" {
-  description = "AMI ID"
-  type = string  
-  default = "ami-0915bcb5fa77e4892"
-}
-*/
-
-variable "ec2_instance_type" {
-  description = "EC2 Instance Type"
-  type = string
-  default = "t3.micro"
+variable "vm_cpu" {
+  description = "cpu core counts"
+  type        = number
+  default     = 1
 }
 
+variable "vm_ram" {
+  description = "ram value based on MegaBytes"
+  type        = number
+  default     = 1024
+}
