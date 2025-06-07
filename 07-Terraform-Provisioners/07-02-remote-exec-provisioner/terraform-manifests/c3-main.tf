@@ -37,6 +37,11 @@ resource "vsphere_virtual_machine" "this" {
     }
   }
 
+  provisioner "file" {
+    source      = "scripts/hello.sh"
+    destination = "/tmp/hello.sh"
+  }
+
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/hello.sh",
