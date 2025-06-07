@@ -1,14 +1,4 @@
 ### Info to connect vCenter ###
-variable "resource_pool_id" {
-  description = "The resource pool ID"
-  type        = string
-}
-
-variable "datastore_id" {
-  description = "The datastore ID"
-  type        = string
-}
-
 variable "vsphere_username" {
   description = "Username for vSphere"
   type        = string
@@ -54,29 +44,7 @@ variable "template_name" {
   type        = string
 }
 
-variable "guest_id" {
-  description = "Guest OS identifier"
-  type        = string
-}
-
-variable "network_id" {
-  description = "Network ID"
-  type        = string
-}
-
-variable "adapter_type" {
-  description = "Type of network adapter"
-  type        = string
-  default     = "vmxnet3"
-}
-
-variable "template_uuid" {
-  description = "the unique ID for template came from data resources"
-  type        = string
-}
-
 ###  Info for create VM ###
-
 variable "vm_name" {
   description = "The name of the virtual machine"
   type        = string
@@ -99,6 +67,11 @@ variable "vm_os_hostname" {
   type        = string
 }
 
+variable "vm_os_domain_name" {
+  description = "the name of the VM domain to set on the OS"
+  type        = string
+}
+
 variable "ipv4_address" {
   description = "Static IP address for the VM"
   type        = string
@@ -111,11 +84,6 @@ variable "ipv4_netmask" {
 
 variable "ipv4_gateway" {
   description = "Gateway for the VM's network"
-  type        = string
-}
-
-variable "vm_os_domain_name" {
-  description = "the name of the VM domain to set on the OS"
   type        = string
 }
 

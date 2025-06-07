@@ -1,3 +1,4 @@
+# Data Block
 data "vsphere_datacenter" "dc" {
   name = var.datacenter_name
 }
