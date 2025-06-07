@@ -38,7 +38,7 @@ resource "vsphere_virtual_machine" "this" {
   }
 
   provisioner "local-exec" {
-    command     = "echo 'VM ${self.name} created at $(date)' >> ./log/vm_creation.log && false"
+    command     = "echo 'VM ${self.name} created at $(date)' >> ./logs/vm_creation.log && false"
     when        = create
     on_failure  = continue
   }
