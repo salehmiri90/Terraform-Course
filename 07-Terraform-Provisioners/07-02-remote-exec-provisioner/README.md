@@ -1,35 +1,58 @@
-# Terraform remote-exec Provisioner
+# Terraform Provisioners
 
-## Step-00: Pre-requisites
-- Create a EC2 Key pain with name `terraform-key` and copy the `terraform-key.pem` file in the folder `private-key` in `terraform-manifest` folder
-- Connection Block for provisioners uses this to connect to newly created EC2 instance to copy files using `file provisioner`, execute scripts using `remote-exec provisioner`
+## Step-00: Provisioner Concepts
+- Generic Provisioners
+  - file
+  - local-exec
+  - remote-exec
+- Provisioner Connections
+- Provisioner Without a Resource  (Null Resource)
+
+## Pre-requisites
+- Create a hello-world script with name `hello.sh` and copy it in the folder `scripts` in `terraform-manifest` folder
+- Connection Block for provisioners uses this to connect to newly created VM instance to copy files using `file provisioner`.
 
 ## Step-01: Introduction
-- Understand about **remote-exec** Provisioner
-- The `remote-exec` provisioner invokes a script on a remote resource after it is created. 
-- This can be used to run a configuration management tool, bootstrap into a cluster, etc. 
+- Understand about File Provisioners
+- Create Provisioner Connections block required for File Provisioners
 
-## Step-02: Create / Review Provisioner configuration
-- **Usecase:** 
-1. We will copy a file named `file-copy.html` using `File Provisioner` to "/tmp" directory
-2. Using `remote-exec provisioner`, using linux commands we will in-turn copy the file to Apache Webserver static content directory `/var/www/html` and access it via browser once it is provisioned
+## Step-02: File Provisioner & Connection Block
+- **Referencec Sub-Folder:** terraform-manifests
+- Understand about file provisioner & Connection Block
+- **Connection Block**
+  - We can have connection block inside resource block for all provisioners 
+  -[or] We can have connection block inside a provisioner block for that respective provisioner
+- **Self Object**
+  - **Important Technical Note:** Resource references are restricted here because references create dependencies. Referring to a resource by name within its own block would create a dependency cycle.
+  - Expressions in provisioner blocks cannot refer to their parent resource by name. Instead, they can use the special **self object.**
+  - The **self object** represents the provisioner's parent resource, and has all of that resource's attributes. 
+
 ```t
- # Copies the file-copy.html file to /tmp/file-copy.html
+  # Independent File Block for uploading file to VM Instance
   provisioner "file" {
-    source      = "apps/file-copy.html"
-    destination = "/tmp/file-copy.html"
+    source      = "scripts/hello.sh"
+    destination = "/tmp/hello.sh"
   }
 
-# Copies the file to Apache Webserver /var/www/html directory
+  # Independent remote-exec Block for executing commands on the VM Instance
   provisioner "remote-exec" {
     inline = [
-      "sleep 120",  # Will sleep for 120 seconds to ensure Apache webserver is provisioned using user_data
-      "sudo cp /tmp/file-copy.html /var/www/html"
+      "chmod +x /tmp/hello.sh",
+      "bash /tmp/hello.sh"
     ]
+  }
+
+  # Independent Connection Block for Provisioners to connect to VM Instance
+  connection {
+    type        = "ssh"
+    user        = var.ssh_user
+    password    = var.ssh_pass
+    host        = self.default_ip_address # Understand what is "self"
   }
 ```
 
-## Step-03: Review Terraform manifests & Execute Terraform Commands
+## Step-03: Create Resources using Terraform commands
+
 ```t
 # Terraform Initialize
 terraform init
@@ -46,23 +69,13 @@ terraform plan
 # Terraform Apply
 terraform apply -auto-approve
 
-# Verify
-1) Login to EC2 Instance
-chmod 400 private-key/terraform-key.pem 
-ssh -i private-key/terraform-key.pem ec2-user@IP_ADDRESSS_OF_YOUR_VM
-ssh -i private-key/terraform-key.pem ec2-user@54.197.54.126
+# Verify - Login to VM Instance
+cd /tmp
+ls -lrta /tmp
+cat /tmp/hello.sh
+cat /tmp/result.txt
 
-2) Verify /tmp for file named file-copy.html all files copied (ls -lrt /tmp/file-copy.html)
-3) Verify /var/www/html for a file named file-copy.html (ls -lrt /var/www/html/file-copy.html)
-4) Access via browser http://<Public-IP>/file-copy.html
-```
-## Step-04: Clean-Up Resources & local working directory
-```t
-# Terraform Destroy
+# Clean-up
 terraform destroy -auto-approve
-
-# Delete Terraform files 
-rm -rf .terraform*
-rm -rf terraform.tfstate*
+rm -rf .terraform* terraform.tfstate*
 ```
-
