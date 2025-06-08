@@ -76,6 +76,3 @@ terraform destroy -auto-approve
 rm -rf .terraform*
 rm -rf terraform.tfstate*
 ```
-
-## References
-- [Null Provider](https://registry.terraform.io/providers/hashicorp/null/latest/docs)
