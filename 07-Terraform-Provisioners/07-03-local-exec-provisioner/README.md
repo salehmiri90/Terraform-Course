@@ -53,3 +53,5 @@ rm -rf .terraform*
 rm -rf terraform.tfstate*
 ```
 
+## Reference
+- [Local Exec Provisioner](https://developer.hashicorp.com/terraform/language/resources/provisioners/local-exec)

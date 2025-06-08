@@ -79,3 +79,6 @@ cat /tmp/result.txt
 terraform destroy -auto-approve
 rm -rf .terraform* terraform.tfstate*
 ```
+
+## Reference
+- [Remote Exec Provisioner](https://developer.hashicorp.com/terraform/language/resources/provisioners/remote-exec)

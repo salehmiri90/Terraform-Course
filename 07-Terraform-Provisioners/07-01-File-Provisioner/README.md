@@ -64,3 +64,6 @@ cat /tmp/hello.sh
 terraform destroy -auto-approve
 rm -rf .terraform* terraform.tfstate*
 ```
+
+## Reference
+- [File Provisioner](https://developer.hashicorp.com/terraform/language/resources/provisioners/file)
