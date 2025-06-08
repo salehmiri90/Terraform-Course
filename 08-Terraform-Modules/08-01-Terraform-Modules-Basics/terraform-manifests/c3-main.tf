@@ -1,8 +1,8 @@
 # Resource Block
 resource "vsphere_virtual_machine" "saleh_vm" {
   name     = var.vm_name
-  num_cpus = var.vm_cpu
-  memory   = var.vm_ram
+  num_cpus = var.num_cpus
+  memory   = var.memory
 
   resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id
   datastore_id     = data.vsphere_datastore.ds.id
