@@ -52,13 +52,13 @@ vi .bashrc
 
 # Terraform log settings
 export TF_LOG=TRACE
-export TF_LOG_PATH="terraform-trace.log"
+export TF_LOG_PATH="terraform.log"
 
 # Verify after saving the file in new terminal 
 $ echo $TF_LOG
 TRACE
 $ echo $TF_LOG_PATH
-terraform-trace.log
+terraform.log
 ```
 ### Windows Powershell
 - Setup using Powershell profile
@@ -92,8 +92,5 @@ $ echo $TF_LOG_PATH
 terraform-trace.log
 ```
 
-## Step-04: Terraform Crash Log
-- If Terraform ever crashes (a "panic" in the Go runtime), it saves a log file with the debug logs from the session as well as the panic message and backtrace to `crash.log`.
-- Generally speaking, this log file is meant to be passed along to the developers via a GitHub Issue. 
-- As a user, you're not required to dig into this file.
-- [How to read a crash log?](https://www.terraform.io/docs/internals/debugging.html#interpreting-a-crash-log)
+## References
+- [Terraform Debugging](https://developer.hashicorp.com/terraform/internals/debugging)
