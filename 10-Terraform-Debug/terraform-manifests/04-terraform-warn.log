@@ -1,0 +1,118 @@
+2025-06-09T10:19:35.320+0330 [ERROR] Checkpoint error: Get "https://checkpoint-api.hashicorp.com/v1/check/terraform?arch=amd64&os=linux&signature=2fb5b173-8fa0-b26b-80f6-2dff16890e92&version=1.8.4": dial tcp: lookup checkpoint-api.hashicorp.com on 192.168.1.1:53: no such host
+2025-06-09T10:28:25.562+0330 [WARN]  ValidateProviderConfig from "provider[\"registry.terraform.io/hashicorp/vsphere\"]" changed the config value, but that value is unused
+2025-06-09T10:28:25.889+0330 [WARN]  Provider "registry.terraform.io/hashicorp/vsphere" produced an invalid plan for module.saleh_vm.vsphere_virtual_machine.saleh_vm, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .migrate_wait_timeout: planned value cty.NumberIntVal(30) for a non-computed attribute
+      - .poweron_timeout: planned value cty.NumberIntVal(300) for a non-computed attribute
+      - .sync_time_with_host: planned value cty.True for a non-computed attribute
+      - .boot_retry_delay: planned value cty.NumberIntVal(10000) for a non-computed attribute
+      - .ept_rvi_mode: planned value cty.StringVal("automatic") for a non-computed attribute
+      - .firmware: planned value cty.StringVal("bios") for a non-computed attribute
+      - .swap_placement_policy: planned value cty.StringVal("inherit") for a non-computed attribute
+      - .latency_sensitivity: planned value cty.StringVal("normal") for a non-computed attribute
+      - .memory_limit: planned value cty.NumberIntVal(-1) for a non-computed attribute
+      - .run_tools_scripts_after_power_on: planned value cty.True for a non-computed attribute
+      - .run_tools_scripts_before_guest_standby: planned value cty.True for a non-computed attribute
+      - .sata_controller_count: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .extra_config_reboot_required: planned value cty.True for a non-computed attribute
+      - .tools_upgrade_policy: planned value cty.StringVal("manual") for a non-computed attribute
+      - .cpu_limit: planned value cty.NumberIntVal(-1) for a non-computed attribute
+      - .hv_mode: planned value cty.StringVal("hvAuto") for a non-computed attribute
+      - .run_tools_scripts_before_guest_shutdown: planned value cty.True for a non-computed attribute
+      - .scsi_bus_sharing: planned value cty.StringVal("noSharing") for a non-computed attribute
+      - .scsi_controller_count: planned value cty.NumberIntVal(1) for a non-computed attribute
+      - .cpu_share_level: planned value cty.StringVal("normal") for a non-computed attribute
+      - .scsi_type: planned value cty.StringVal("pvscsi") for a non-computed attribute
+      - .ide_controller_count: planned value cty.NumberIntVal(2) for a non-computed attribute
+      - .num_cores_per_socket: planned value cty.NumberIntVal(1) for a non-computed attribute
+      - .shutdown_wait_timeout: planned value cty.NumberIntVal(3) for a non-computed attribute
+      - .memory_share_level: planned value cty.StringVal("normal") for a non-computed attribute
+      - .run_tools_scripts_after_resume: planned value cty.True for a non-computed attribute
+      - .force_power_off: planned value cty.True for a non-computed attribute
+      - .disk[0].disk_sharing: planned value cty.StringVal("sharingNone") for a non-computed attribute
+      - .disk[0].keep_on_remove: planned value cty.False for a non-computed attribute
+      - .disk[0].unit_number: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .disk[0].controller_type: planned value cty.StringVal("scsi") for a non-computed attribute
+      - .disk[0].disk_mode: planned value cty.StringVal("persistent") for a non-computed attribute
+      - .disk[0].io_reservation: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .disk[0].attach: planned value cty.False for a non-computed attribute
+      - .disk[0].io_share_level: planned value cty.StringVal("normal") for a non-computed attribute
+      - .disk[0].write_through: planned value cty.False for a non-computed attribute
+      - .disk[0].io_limit: planned value cty.NumberIntVal(-1) for a non-computed attribute
+      - .disk[0].io_share_count: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .network_interface[0].bandwidth_reservation: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .network_interface[0].bandwidth_share_level: planned value cty.StringVal("normal") for a non-computed attribute
+      - .network_interface[0].bandwidth_limit: planned value cty.NumberIntVal(-1) for a non-computed attribute
+2025-06-09T10:28:25.977+0330 [WARN]  ValidateProviderConfig from "provider[\"registry.terraform.io/hashicorp/vsphere\"]" changed the config value, but that value is unused
+2025-06-09T10:28:26.242+0330 [WARN]  Provider "registry.terraform.io/hashicorp/vsphere" produced an invalid plan for module.saleh_vm.vsphere_virtual_machine.saleh_vm, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .extra_config_reboot_required: planned value cty.True for a non-computed attribute
+      - .tools_upgrade_policy: planned value cty.StringVal("manual") for a non-computed attribute
+      - .cpu_limit: planned value cty.NumberIntVal(-1) for a non-computed attribute
+      - .hv_mode: planned value cty.StringVal("hvAuto") for a non-computed attribute
+      - .run_tools_scripts_before_guest_shutdown: planned value cty.True for a non-computed attribute
+      - .scsi_bus_sharing: planned value cty.StringVal("noSharing") for a non-computed attribute
+      - .scsi_controller_count: planned value cty.NumberIntVal(1) for a non-computed attribute
+      - .cpu_share_level: planned value cty.StringVal("normal") for a non-computed attribute
+      - .scsi_type: planned value cty.StringVal("pvscsi") for a non-computed attribute
+      - .ide_controller_count: planned value cty.NumberIntVal(2) for a non-computed attribute
+      - .num_cores_per_socket: planned value cty.NumberIntVal(1) for a non-computed attribute
+      - .shutdown_wait_timeout: planned value cty.NumberIntVal(3) for a non-computed attribute
+      - .memory_share_level: planned value cty.StringVal("normal") for a non-computed attribute
+      - .run_tools_scripts_after_resume: planned value cty.True for a non-computed attribute
+      - .force_power_off: planned value cty.True for a non-computed attribute
+      - .migrate_wait_timeout: planned value cty.NumberIntVal(30) for a non-computed attribute
+      - .poweron_timeout: planned value cty.NumberIntVal(300) for a non-computed attribute
+      - .sync_time_with_host: planned value cty.True for a non-computed attribute
+      - .boot_retry_delay: planned value cty.NumberIntVal(10000) for a non-computed attribute
+      - .ept_rvi_mode: planned value cty.StringVal("automatic") for a non-computed attribute
+      - .firmware: planned value cty.StringVal("bios") for a non-computed attribute
+      - .swap_placement_policy: planned value cty.StringVal("inherit") for a non-computed attribute
+      - .latency_sensitivity: planned value cty.StringVal("normal") for a non-computed attribute
+      - .memory_limit: planned value cty.NumberIntVal(-1) for a non-computed attribute
+      - .run_tools_scripts_after_power_on: planned value cty.True for a non-computed attribute
+      - .run_tools_scripts_before_guest_standby: planned value cty.True for a non-computed attribute
+      - .sata_controller_count: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .disk[0].unit_number: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .disk[0].disk_sharing: planned value cty.StringVal("sharingNone") for a non-computed attribute
+      - .disk[0].keep_on_remove: planned value cty.False for a non-computed attribute
+      - .disk[0].controller_type: planned value cty.StringVal("scsi") for a non-computed attribute
+      - .disk[0].disk_mode: planned value cty.StringVal("persistent") for a non-computed attribute
+      - .disk[0].io_reservation: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .disk[0].write_through: planned value cty.False for a non-computed attribute
+      - .disk[0].attach: planned value cty.False for a non-computed attribute
+      - .disk[0].io_share_level: planned value cty.StringVal("normal") for a non-computed attribute
+      - .disk[0].io_limit: planned value cty.NumberIntVal(-1) for a non-computed attribute
+      - .disk[0].io_share_count: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .network_interface[0].bandwidth_limit: planned value cty.NumberIntVal(-1) for a non-computed attribute
+      - .network_interface[0].bandwidth_reservation: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .network_interface[0].bandwidth_share_level: planned value cty.StringVal("normal") for a non-computed attribute
+2025-06-09T10:28:34.256+0330 [WARN]  Provider "provider[\"registry.terraform.io/hashicorp/vsphere\"]" produced an unexpected new value for module.saleh_vm.vsphere_virtual_machine.saleh_vm, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .ept_rvi_mode: was cty.StringVal("automatic"), but now cty.StringVal("")
+      - .vbs_enabled: was null, but now cty.False
+      - .memory_reservation_locked_to_max: was null, but now cty.False
+      - .memory_hot_add_enabled: was null, but now cty.False
+      - .cpu_hot_add_enabled: was null, but now cty.False
+      - .cpu_reservation: was null, but now cty.NumberIntVal(0)
+      - .nested_hv_enabled: was null, but now cty.False
+      - .boot_delay: was null, but now cty.NumberIntVal(0)
+      - .memory_reservation: was null, but now cty.NumberIntVal(0)
+      - .hv_mode: was cty.StringVal("hvAuto"), but now cty.StringVal("")
+      - .sync_time_with_host_periodically: was null, but now cty.False
+      - .cpu_hot_remove_enabled: was null, but now cty.False
+      - .folder: was null, but now cty.StringVal("")
+      - .alternate_guest_name: was null, but now cty.StringVal("")
+      - .vvtd_enabled: was null, but now cty.False
+      - .efi_secure_boot_enabled: was null, but now cty.False
+      - .enable_logging: was null, but now cty.False
+      - .cpu_performance_counters_enabled: was null, but now cty.False
+      - .run_tools_scripts_before_guest_reboot: was null, but now cty.False
+      - .boot_retry_enabled: was null, but now cty.False
+      - .enable_disk_uuid: was null, but now cty.False
+      - .disk[0].io_share_count: was cty.NumberIntVal(0), but now cty.NumberIntVal(1000)
+      - .disk[0].key: was cty.NumberIntVal(0), but now cty.NumberIntVal(2000)
+      - .disk[0].datastore_id: was cty.StringVal("<computed>"), but now cty.StringVal("datastore-1025")
+      - .network_interface[0].ovf_mapping: was null, but now cty.StringVal("")
+      - .network_interface[0].physical_function: was null, but now cty.StringVal("")
+      - .network_interface[0].use_static_mac: was null, but now cty.False
