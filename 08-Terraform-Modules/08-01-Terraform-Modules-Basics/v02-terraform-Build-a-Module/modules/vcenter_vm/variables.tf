@@ -1,22 +1,3 @@
-### Info to connect vCenter ###
-variable "vsphere_username" {
-  description = "Username for vSphere"
-  type        = string
-  sensitive   = true
-}
-
-variable "vsphere_password" {
-  description = "Password for vSphere"
-  type        = string
-  sensitive   = true
-}
-
-variable "vsphere_server" {
-  description = "vSphere server address"
-  type        = string
-  sensitive   = true
-}
-
 ### Info about vCenter resources ###
 variable "resource_pool_id" {
   description = "The resource pool ID"

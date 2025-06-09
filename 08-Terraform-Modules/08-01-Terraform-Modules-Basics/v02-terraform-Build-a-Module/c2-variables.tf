@@ -54,3 +54,25 @@ variable "memory" {
   description = "Memory size in GB"
   type        = number
 }
+
+variable "vm_size" {
+  description = "Disk size in GB"
+  type        = number
+}
+
+# variable "guest_id" {
+#   description = "Guest OS identifier"
+#   type        = string
+# }
+
+variable "eagerly_scrub" {
+  description = "Set for thick eager-zeroed disk"
+  type        = bool
+  default     = false
+}
+
+variable "thin_provisioned" {
+  description = "Whether the disk should be thin provisioned"
+  type        = bool
+  default     = true
+}
