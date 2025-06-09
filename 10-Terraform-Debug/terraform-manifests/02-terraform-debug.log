@@ -1,1 +1,590 @@
-2025-06-09T10:19:35.320+0330 [ERROR] Checkpoint error: Get "https://checkpoint-api.hashicorp.com/v1/check/terraform?arch=amd64&os=linux&signature=2fb5b173-8fa0-b26b-80f6-2dff16890e92&version=1.8.4": dial tcp: lookup checkpoint-api.hashicorp.com on 192.168.1.1:53: no such host
+
+2025-06-09T10:24:28.837+0330 [INFO]  Terraform version: 1.8.4
+2025-06-09T10:24:28.838+0330 [DEBUG] using github.com/hashicorp/go-tfe v1.51.0
+2025-06-09T10:24:28.838+0330 [DEBUG] using github.com/hashicorp/hcl/v2 v2.20.0
+2025-06-09T10:24:28.838+0330 [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2025-06-09T10:24:28.838+0330 [DEBUG] using github.com/zclconf/go-cty v1.14.3
+2025-06-09T10:24:28.838+0330 [INFO]  Go runtime version: go1.22.1
+2025-06-09T10:24:28.838+0330 [INFO]  CLI args: []string{"terraform", "apply", "--auto-approve"}
+2025-06-09T10:24:28.838+0330 [DEBUG] Attempting to open CLI config file: /root/.terraformrc
+2025-06-09T10:24:28.838+0330 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2025-06-09T10:24:28.838+0330 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2025-06-09T10:24:28.838+0330 [DEBUG] ignoring non-existing provider search directory /root/.terraform.d/plugins
+2025-06-09T10:24:28.838+0330 [DEBUG] ignoring non-existing provider search directory /root/.local/share/terraform/plugins
+2025-06-09T10:24:28.838+0330 [DEBUG] ignoring non-existing provider search directory /usr/local/share/terraform/plugins
+2025-06-09T10:24:28.838+0330 [DEBUG] ignoring non-existing provider search directory /usr/share/terraform/plugins
+2025-06-09T10:24:28.838+0330 [INFO]  CLI command args: []string{"apply", "--auto-approve"}
+2025-06-09T10:24:28.839+0330 [ERROR] Checkpoint error: Get "https://checkpoint-api.hashicorp.com/v1/check/terraform?arch=amd64&os=linux&signature=2fb5b173-8fa0-b26b-80f6-2dff16890e92&version=1.8.4": dial tcp: lookup checkpoint-api.hashicorp.com on 172.18.9.1:53: no such host
+2025-06-09T10:24:28.842+0330 [DEBUG] New state was assigned lineage "12f2d302-9694-29dc-eded-fc28e37e2e59"
+2025-06-09T10:24:28.930+0330 [DEBUG] checking for provisioner in "/opt/terraform/plugins/"
+2025-06-09T10:24:28.930+0330 [INFO]  backend/local: starting Apply operation
+2025-06-09T10:24:28.932+0330 [DEBUG] created provider logger: level=debug
+2025-06-09T10:24:28.932+0330 [INFO]  provider: configuring client automatic mTLS
+2025-06-09T10:24:28.943+0330 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5"]
+2025-06-09T10:24:28.943+0330 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5 pid=2292670
+2025-06-09T10:24:28.943+0330 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5
+2025-06-09T10:24:28.958+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: configuring server automatic mTLS: timestamp="2025-06-09T10:24:28.958+0330"
+2025-06-09T10:24:28.981+0330 [DEBUG] provider: using plugin: version=5
+2025-06-09T10:24:28.981+0330 [DEBUG] provider.terraform-provider-vsphere_v2.8.1_x5: plugin address: address=/tmp/plugin3526713609 network=unix timestamp="2025-06-09T10:24:28.981+0330"
+2025-06-09T10:24:29.021+0330 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2025-06-09T10:24:29.021+0330 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5 pid=2292670
+2025-06-09T10:24:29.022+0330 [DEBUG] provider: plugin exited
+2025-06-09T10:24:29.022+0330 [DEBUG] Building and walking validate graph
+2025-06-09T10:24:29.022+0330 [DEBUG] ProviderTransformer: "data.vsphere_datastore.ds" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.022+0330 [DEBUG] ProviderTransformer: "data.vsphere_compute_cluster.cluster" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.022+0330 [DEBUG] ProviderTransformer: "module.saleh_vm.vsphere_virtual_machine.saleh_vm" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.022+0330 [DEBUG] ProviderTransformer: "data.vsphere_network.network" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.022+0330 [DEBUG] ProviderTransformer: "data.vsphere_datacenter.dc" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.vm_size (expand)" references: [var.vm_size]
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.output.vm_state (expand)" references: [module.saleh_vm.vsphere_virtual_machine.saleh_vm]
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "data.vsphere_datastore.ds" references: [data.vsphere_datacenter.dc var.datastore_name]
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "var.thin_provisioned" references: []
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.thin_provisioned (expand)" references: [var.thin_provisioned]
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.network_id (expand)" references: [data.vsphere_network.network]
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "var.eagerly_scrub" references: []
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "var.datacenter_name" references: []
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "var.num_cpus" references: []
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "var.vsphere_server" references: []
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.adapter_type (expand)" references: []
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.num_cpus (expand)" references: [var.num_cpus]
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.vm_name (expand)" references: [var.vm_name]
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "output.this_vm_id (expand)" references: [module.saleh_vm.output.vm_id (expand)]
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "var.vsphere_password" references: []
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm (close)" references: []
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "output.this_vm_power_state (expand)" references: [module.saleh_vm.output.vm_state (expand)]
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "var.vm_size" references: []
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "var.cluster_name" references: []
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.eagerly_scrub (expand)" references: [var.eagerly_scrub]
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "var.vm_name" references: []
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.vsphere_virtual_machine.saleh_vm" references: [module.saleh_vm.var.memory (expand) module.saleh_vm.var.datastore_id (expand) module.saleh_vm.var.num_cpus (expand) module.saleh_vm.var.vm_name (expand) module.saleh_vm.var.guest_id (expand) module.saleh_vm.var.resource_pool_id (expand) module.saleh_vm.var.adapter_type (expand) module.saleh_vm.var.network_id (expand) module.saleh_vm.var.vm_size (expand) module.saleh_vm.var.eagerly_scrub (expand) module.saleh_vm.var.thin_provisioned (expand) module.saleh_vm.var.vm_name (expand)]
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "var.vsphere_username" references: []
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "var.network_name" references: []
+2025-06-09T10:24:29.023+0330 [DEBUG] ReferenceTransformer: "data.vsphere_compute_cluster.cluster" references: [var.cluster_name data.vsphere_datacenter.dc]
+2025-06-09T10:24:29.024+0330 [DEBUG] ReferenceTransformer: "var.datastore_name" references: []
+2025-06-09T10:24:29.024+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.resource_pool_id (expand)" references: [data.vsphere_compute_cluster.cluster]
+2025-06-09T10:24:29.024+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.output.vm_id (expand)" references: [module.saleh_vm.vsphere_virtual_machine.saleh_vm]
+2025-06-09T10:24:29.024+0330 [DEBUG] ReferenceTransformer: "data.vsphere_network.network" references: [var.network_name data.vsphere_datacenter.dc]
+2025-06-09T10:24:29.024+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.memory (expand)" references: [var.memory]
+2025-06-09T10:24:29.024+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.guest_id (expand)" references: []
+2025-06-09T10:24:29.024+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.datastore_id (expand)" references: [data.vsphere_datastore.ds]
+2025-06-09T10:24:29.024+0330 [DEBUG] ReferenceTransformer: "var.memory" references: []
+2025-06-09T10:24:29.024+0330 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/vsphere\"]" references: [var.vsphere_server var.vsphere_username var.vsphere_password]
+2025-06-09T10:24:29.024+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm (expand)" references: []
+2025-06-09T10:24:29.024+0330 [DEBUG] ReferenceTransformer: "data.vsphere_datacenter.dc" references: [var.datacenter_name]
+2025-06-09T10:24:29.025+0330 [DEBUG] Starting graph walk: walkValidate
+2025-06-09T10:24:29.026+0330 [DEBUG] created provider logger: level=debug
+2025-06-09T10:24:29.026+0330 [INFO]  provider: configuring client automatic mTLS
+2025-06-09T10:24:29.032+0330 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5"]
+2025-06-09T10:24:29.032+0330 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5 pid=2292679
+2025-06-09T10:24:29.032+0330 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5
+2025-06-09T10:24:29.039+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: configuring server automatic mTLS: timestamp="2025-06-09T10:24:29.039+0330"
+2025-06-09T10:24:29.051+0330 [DEBUG] provider: using plugin: version=5
+2025-06-09T10:24:29.051+0330 [DEBUG] provider.terraform-provider-vsphere_v2.8.1_x5: plugin address: address=/tmp/plugin2127924948 network=unix timestamp="2025-06-09T10:24:29.051+0330"
+2025-06-09T10:24:29.078+0330 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2025-06-09T10:24:29.079+0330 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5 pid=2292679
+2025-06-09T10:24:29.079+0330 [DEBUG] provider: plugin exited
+2025-06-09T10:24:29.079+0330 [INFO]  backend/local: apply calling Plan
+2025-06-09T10:24:29.079+0330 [DEBUG] Building and walking plan graph for NormalMode
+2025-06-09T10:24:29.080+0330 [DEBUG] ProviderTransformer: "module.saleh_vm.vsphere_virtual_machine.saleh_vm (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.080+0330 [DEBUG] ProviderTransformer: "data.vsphere_compute_cluster.cluster (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.080+0330 [DEBUG] ProviderTransformer: "data.vsphere_network.network (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.080+0330 [DEBUG] ProviderTransformer: "data.vsphere_datacenter.dc (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.080+0330 [DEBUG] ProviderTransformer: "data.vsphere_datastore.ds (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "var.cluster_name" references: []
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.memory (expand)" references: [var.memory]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.guest_id (expand)" references: []
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.output.vm_id (expand)" references: [module.saleh_vm.vsphere_virtual_machine.saleh_vm (expand)]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "output.this_vm_power_state (expand)" references: [module.saleh_vm.output.vm_state (expand)]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "var.vsphere_password" references: []
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "var.thin_provisioned" references: []
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.vm_size (expand)" references: [var.vm_size]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "data.vsphere_datacenter.dc (expand)" references: [var.datacenter_name]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "data.vsphere_datastore.ds (expand)" references: [data.vsphere_datacenter.dc (expand) var.datastore_name]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "var.vm_name" references: []
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "var.eagerly_scrub" references: []
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.vm_name (expand)" references: [var.vm_name]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.adapter_type (expand)" references: []
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.vsphere_virtual_machine.saleh_vm (expand)" references: [module.saleh_vm.var.memory (expand) module.saleh_vm.var.vm_name (expand) module.saleh_vm.var.resource_pool_id (expand) module.saleh_vm.var.num_cpus (expand) module.saleh_vm.var.datastore_id (expand) module.saleh_vm.var.guest_id (expand) module.saleh_vm.var.adapter_type (expand) module.saleh_vm.var.network_id (expand) module.saleh_vm.var.eagerly_scrub (expand) module.saleh_vm.var.thin_provisioned (expand) module.saleh_vm.var.vm_name (expand) module.saleh_vm.var.vm_size (expand)]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "var.datacenter_name" references: []
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "var.num_cpus" references: []
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "var.vsphere_username" references: []
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "var.datastore_name" references: []
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "var.memory" references: []
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.thin_provisioned (expand)" references: [var.thin_provisioned]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.num_cpus (expand)" references: [var.num_cpus]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/vsphere\"]" references: [var.vsphere_username var.vsphere_password var.vsphere_server]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm (close)" references: []
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "var.vm_size" references: []
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.resource_pool_id (expand)" references: [data.vsphere_compute_cluster.cluster (expand)]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.eagerly_scrub (expand)" references: [var.eagerly_scrub]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "output.this_vm_id (expand)" references: [module.saleh_vm.output.vm_id (expand)]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm (expand)" references: []
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "data.vsphere_compute_cluster.cluster (expand)" references: [data.vsphere_datacenter.dc (expand) var.cluster_name]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "data.vsphere_network.network (expand)" references: [var.network_name data.vsphere_datacenter.dc (expand)]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "var.vsphere_server" references: []
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.network_id (expand)" references: [data.vsphere_network.network (expand)]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.datastore_id (expand)" references: [data.vsphere_datastore.ds (expand)]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.output.vm_state (expand)" references: [module.saleh_vm.vsphere_virtual_machine.saleh_vm (expand)]
+2025-06-09T10:24:29.081+0330 [DEBUG] ReferenceTransformer: "var.network_name" references: []
+2025-06-09T10:24:29.083+0330 [DEBUG] Starting graph walk: walkPlan
+2025-06-09T10:24:29.084+0330 [DEBUG] created provider logger: level=debug
+2025-06-09T10:24:29.084+0330 [INFO]  provider: configuring client automatic mTLS
+2025-06-09T10:24:29.090+0330 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5"]
+2025-06-09T10:24:29.090+0330 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5 pid=2292688
+2025-06-09T10:24:29.090+0330 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5
+2025-06-09T10:24:29.097+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: configuring server automatic mTLS: timestamp="2025-06-09T10:24:29.097+0330"
+2025-06-09T10:24:29.112+0330 [DEBUG] provider: using plugin: version=5
+2025-06-09T10:24:29.112+0330 [DEBUG] provider.terraform-provider-vsphere_v2.8.1_x5: plugin address: address=/tmp/plugin2200503222 network=unix timestamp="2025-06-09T10:24:29.112+0330"
+2025-06-09T10:24:29.134+0330 [WARN]  ValidateProviderConfig from "provider[\"registry.terraform.io/hashicorp/vsphere\"]" changed the config value, but that value is unused
+2025-06-09T10:24:29.136+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Cached SOAP client session data not valid or persistence not enabled, new session necessary: timestamp="2025-06-09T10:24:29.136+0330"
+2025-06-09T10:24:29.136+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Creating new SOAP API session on endpoint 192.168.1.100: timestamp="2025-06-09T10:24:29.136+0330"
+2025-06-09T10:24:29.176+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] SOAP API session creation successful: timestamp="2025-06-09T10:24:29.176+0330"
+2025-06-09T10:24:29.176+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] VMWare vSphere Client configured for URL: 192.168.1.100: timestamp="2025-06-09T10:24:29.176+0330"
+2025-06-09T10:24:29.176+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Setting up REST client: timestamp="2025-06-09T10:24:29.176+0330"
+2025-06-09T10:24:29.328+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] CIS REST client configuration successful: timestamp="2025-06-09T10:24:29.328+0330"
+2025-06-09T10:24:29.333+0330 [DEBUG] Resource instance state not found for node "data.vsphere_datacenter.dc", instance data.vsphere_datacenter.dc
+2025-06-09T10:24:29.334+0330 [DEBUG] ReferenceTransformer: "data.vsphere_datacenter.dc" references: []
+2025-06-09T10:24:29.348+0330 [DEBUG] Resource instance state not found for node "data.vsphere_compute_cluster.cluster", instance data.vsphere_compute_cluster.cluster
+2025-06-09T10:24:29.348+0330 [DEBUG] ReferenceTransformer: "data.vsphere_compute_cluster.cluster" references: []
+2025-06-09T10:24:29.348+0330 [DEBUG] Resource instance state not found for node "data.vsphere_network.network", instance data.vsphere_network.network
+2025-06-09T10:24:29.348+0330 [DEBUG] ReferenceTransformer: "data.vsphere_network.network" references: []
+2025-06-09T10:24:29.349+0330 [DEBUG] Resource instance state not found for node "data.vsphere_datastore.ds", instance data.vsphere_datastore.ds
+2025-06-09T10:24:29.349+0330 [DEBUG] ReferenceTransformer: "data.vsphere_datastore.ds" references: []
+2025-06-09T10:24:29.356+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Looking for cluster "Cluster-01" in datacenter "/DC-1": timestamp="2025-06-09T10:24:29.355+0330"
+2025-06-09T10:24:29.356+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Attempting to locate compute cluster "Cluster-01" in datacenter "/DC-1": timestamp="2025-06-09T10:24:29.355+0330"
+2025-06-09T10:24:29.396+0330 [DEBUG] Resource instance state not found for node "module.saleh_vm.vsphere_virtual_machine.saleh_vm", instance module.saleh_vm.vsphere_virtual_machine.saleh_vm
+2025-06-09T10:24:29.397+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.vsphere_virtual_machine.saleh_vm" references: []
+2025-06-09T10:24:29.397+0330 [DEBUG] refresh: module.saleh_vm.vsphere_virtual_machine.saleh_vm: no state, so not refreshing
+2025-06-09T10:24:29.415+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): Performing diff customization and validation: timestamp="2025-06-09T10:24:29.415+0330"
+2025-06-09T10:24:29.415+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NetworkInterfaceDiffOperation: Beginning diff validation: timestamp="2025-06-09T10:24:29.415+0330"
+2025-06-09T10:24:29.415+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] network_interface.0 (key 0 at <new device>): Beginning diff validation: timestamp="2025-06-09T10:24:29.415+0330"
+2025-06-09T10:24:29.415+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] network_interface.0 (key 0 at <new device>): Diff validation complete: timestamp="2025-06-09T10:24:29.415+0330"
+2025-06-09T10:24:29.415+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NetworkInterfaceDiffOperation: Diff validation complete: timestamp="2025-06-09T10:24:29.415+0330"
+2025-06-09T10:24:29.415+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): resource_pool_id modified without change to host_system_id, marking as computed: timestamp="2025-06-09T10:24:29.415+0330"
+2025-06-09T10:24:29.415+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskDiffOperation: Beginning disk diff customization: timestamp="2025-06-09T10:24:29.415+0330"
+2025-06-09T10:24:29.415+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskDiffOperation: Beginning collective diff validation (indexes aligned to new config): timestamp="2025-06-09T10:24:29.415+0330"
+2025-06-09T10:24:29.415+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] disk.0 (key 0 at <new device>) (<unknown>): Beginning diff validation: timestamp="2025-06-09T10:24:29.415+0330"
+2025-06-09T10:24:29.415+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] disk.0 (key 0 at <new device>) (<unknown>): Diff validation complete: timestamp="2025-06-09T10:24:29.415+0330"
+2025-06-09T10:24:29.415+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskDiffOperation: Beginning diff validation and normalization (indexes aligned to old state): timestamp="2025-06-09T10:24:29.415+0330"
+2025-06-09T10:24:29.415+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskDiffOperation: New resource set post-normalization: (key 0 at <new device>): timestamp="2025-06-09T10:24:29.415+0330"
+2025-06-09T10:24:29.415+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskDiffOperation: Disk diff customization complete, sending new diff: timestamp="2025-06-09T10:24:29.415+0330"
+2025-06-09T10:24:29.415+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] VAppDiffOperation: Verifying configuration meets requirements for vApp transport: timestamp="2025-06-09T10:24:29.415+0330"
+2025-06-09T10:24:29.415+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] VAppDiffOperation: ISO transport is not supported on this virtual machine or multiple transport options exist: timestamp="2025-06-09T10:24:29.415+0330"
+2025-06-09T10:24:29.415+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): Diff customization and validation complete: timestamp="2025-06-09T10:24:29.415+0330"
+2025-06-09T10:24:29.418+0330 [WARN]  Provider "registry.terraform.io/hashicorp/vsphere" produced an invalid plan for module.saleh_vm.vsphere_virtual_machine.saleh_vm, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .extra_config_reboot_required: planned value cty.True for a non-computed attribute
+      - .cpu_limit: planned value cty.NumberIntVal(-1) for a non-computed attribute
+      - .ept_rvi_mode: planned value cty.StringVal("automatic") for a non-computed attribute
+      - .force_power_off: planned value cty.True for a non-computed attribute
+      - .scsi_type: planned value cty.StringVal("pvscsi") for a non-computed attribute
+      - .run_tools_scripts_after_resume: planned value cty.True for a non-computed attribute
+      - .num_cores_per_socket: planned value cty.NumberIntVal(1) for a non-computed attribute
+      - .run_tools_scripts_after_power_on: planned value cty.True for a non-computed attribute
+      - .shutdown_wait_timeout: planned value cty.NumberIntVal(3) for a non-computed attribute
+      - .firmware: planned value cty.StringVal("bios") for a non-computed attribute
+      - .sata_controller_count: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .scsi_bus_sharing: planned value cty.StringVal("noSharing") for a non-computed attribute
+      - .hv_mode: planned value cty.StringVal("hvAuto") for a non-computed attribute
+      - .sync_time_with_host: planned value cty.True for a non-computed attribute
+      - .run_tools_scripts_before_guest_standby: planned value cty.True for a non-computed attribute
+      - .ide_controller_count: planned value cty.NumberIntVal(2) for a non-computed attribute
+      - .poweron_timeout: planned value cty.NumberIntVal(300) for a non-computed attribute
+      - .run_tools_scripts_before_guest_shutdown: planned value cty.True for a non-computed attribute
+      - .latency_sensitivity: planned value cty.StringVal("normal") for a non-computed attribute
+      - .swap_placement_policy: planned value cty.StringVal("inherit") for a non-computed attribute
+      - .tools_upgrade_policy: planned value cty.StringVal("manual") for a non-computed attribute
+      - .migrate_wait_timeout: planned value cty.NumberIntVal(30) for a non-computed attribute
+      - .cpu_share_level: planned value cty.StringVal("normal") for a non-computed attribute
+      - .memory_share_level: planned value cty.StringVal("normal") for a non-computed attribute
+      - .memory_limit: planned value cty.NumberIntVal(-1) for a non-computed attribute
+      - .boot_retry_delay: planned value cty.NumberIntVal(10000) for a non-computed attribute
+      - .scsi_controller_count: planned value cty.NumberIntVal(1) for a non-computed attribute
+      - .disk[0].io_reservation: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .disk[0].io_share_count: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .disk[0].write_through: planned value cty.False for a non-computed attribute
+      - .disk[0].controller_type: planned value cty.StringVal("scsi") for a non-computed attribute
+      - .disk[0].unit_number: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .disk[0].attach: planned value cty.False for a non-computed attribute
+      - .disk[0].disk_mode: planned value cty.StringVal("persistent") for a non-computed attribute
+      - .disk[0].disk_sharing: planned value cty.StringVal("sharingNone") for a non-computed attribute
+      - .disk[0].io_limit: planned value cty.NumberIntVal(-1) for a non-computed attribute
+      - .disk[0].io_share_level: planned value cty.StringVal("normal") for a non-computed attribute
+      - .disk[0].keep_on_remove: planned value cty.False for a non-computed attribute
+      - .network_interface[0].bandwidth_share_level: planned value cty.StringVal("normal") for a non-computed attribute
+      - .network_interface[0].bandwidth_limit: planned value cty.NumberIntVal(-1) for a non-computed attribute
+      - .network_interface[0].bandwidth_reservation: planned value cty.NumberIntVal(0) for a non-computed attribute
+2025-06-09T10:24:29.420+0330 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2025-06-09T10:24:29.422+0330 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5 pid=2292688
+2025-06-09T10:24:29.422+0330 [DEBUG] provider: plugin exited
+2025-06-09T10:24:29.422+0330 [DEBUG] building apply graph to check for errors
+2025-06-09T10:24:29.423+0330 [DEBUG] Resource state not found for node "module.saleh_vm.vsphere_virtual_machine.saleh_vm", instance module.saleh_vm.vsphere_virtual_machine.saleh_vm
+2025-06-09T10:24:29.424+0330 [DEBUG] ProviderTransformer: "module.saleh_vm.vsphere_virtual_machine.saleh_vm (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.425+0330 [DEBUG] ProviderTransformer: "module.saleh_vm.vsphere_virtual_machine.saleh_vm" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.425+0330 [DEBUG] ProviderTransformer: "data.vsphere_compute_cluster.cluster (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.425+0330 [DEBUG] ProviderTransformer: "data.vsphere_datacenter.dc (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.425+0330 [DEBUG] ProviderTransformer: "data.vsphere_datastore.ds (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.425+0330 [DEBUG] ProviderTransformer: "data.vsphere_network.network (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "output.this_vm_power_state (expand)" references: [module.saleh_vm.output.vm_state (expand)]
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/vsphere\"]" references: [var.vsphere_server var.vsphere_username var.vsphere_password]
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "var.vsphere_server" references: []
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "var.vm_size" references: []
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.eagerly_scrub (expand)" references: [var.eagerly_scrub]
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.output.vm_state (expand)" references: [module.saleh_vm.vsphere_virtual_machine.saleh_vm (expand) module.saleh_vm.vsphere_virtual_machine.saleh_vm module.saleh_vm.vsphere_virtual_machine.saleh_vm]
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "var.cluster_name" references: []
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.output.vm_id (expand)" references: [module.saleh_vm.vsphere_virtual_machine.saleh_vm (expand) module.saleh_vm.vsphere_virtual_machine.saleh_vm module.saleh_vm.vsphere_virtual_machine.saleh_vm]
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm (expand)" references: []
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "output.this_vm_id (expand)" references: [module.saleh_vm.output.vm_id (expand)]
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "var.vsphere_password" references: []
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "var.thin_provisioned" references: []
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.vm_name (expand)" references: [var.vm_name]
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.network_id (expand)" references: [data.vsphere_network.network (expand)]
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "data.vsphere_datastore.ds (expand)" references: [data.vsphere_datacenter.dc (expand) var.datastore_name]
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "var.num_cpus" references: []
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.num_cpus (expand)" references: [var.num_cpus]
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.vm_size (expand)" references: [var.vm_size]
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.adapter_type (expand)" references: []
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "data.vsphere_network.network (expand)" references: [data.vsphere_datacenter.dc (expand) var.network_name]
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.vsphere_virtual_machine.saleh_vm (expand)" references: [module.saleh_vm.var.guest_id (expand) module.saleh_vm.var.resource_pool_id (expand) module.saleh_vm.var.memory (expand) module.saleh_vm.var.datastore_id (expand) module.saleh_vm.var.num_cpus (expand) module.saleh_vm.var.vm_name (expand) module.saleh_vm.var.adapter_type (expand) module.saleh_vm.var.network_id (expand) module.saleh_vm.var.eagerly_scrub (expand) module.saleh_vm.var.thin_provisioned (expand) module.saleh_vm.var.vm_name (expand) module.saleh_vm.var.vm_size (expand)]
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.datastore_id (expand)" references: [data.vsphere_datastore.ds (expand)]
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.resource_pool_id (expand)" references: [data.vsphere_compute_cluster.cluster (expand)]
+2025-06-09T10:24:29.426+0330 [DEBUG] ReferenceTransformer: "var.network_name" references: []
+2025-06-09T10:24:29.427+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.vsphere_virtual_machine.saleh_vm" references: [module.saleh_vm.var.memory (expand) module.saleh_vm.var.datastore_id (expand) module.saleh_vm.var.vm_name (expand) module.saleh_vm.var.resource_pool_id (expand) module.saleh_vm.var.guest_id (expand) module.saleh_vm.var.num_cpus (expand) module.saleh_vm.var.adapter_type (expand) module.saleh_vm.var.network_id (expand) module.saleh_vm.var.eagerly_scrub (expand) module.saleh_vm.var.thin_provisioned (expand) module.saleh_vm.var.vm_name (expand) module.saleh_vm.var.vm_size (expand)]
+2025-06-09T10:24:29.427+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm (close)" references: []
+2025-06-09T10:24:29.427+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.guest_id (expand)" references: []
+2025-06-09T10:24:29.427+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.thin_provisioned (expand)" references: [var.thin_provisioned]
+2025-06-09T10:24:29.427+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.memory (expand)" references: [var.memory]
+2025-06-09T10:24:29.427+0330 [DEBUG] ReferenceTransformer: "data.vsphere_compute_cluster.cluster (expand)" references: [var.cluster_name data.vsphere_datacenter.dc (expand)]
+2025-06-09T10:24:29.427+0330 [DEBUG] ReferenceTransformer: "var.datacenter_name" references: []
+2025-06-09T10:24:29.427+0330 [DEBUG] ReferenceTransformer: "var.eagerly_scrub" references: []
+2025-06-09T10:24:29.427+0330 [DEBUG] ReferenceTransformer: "var.datastore_name" references: []
+2025-06-09T10:24:29.427+0330 [DEBUG] ReferenceTransformer: "data.vsphere_datacenter.dc (expand)" references: [var.datacenter_name]
+2025-06-09T10:24:29.427+0330 [DEBUG] ReferenceTransformer: "var.vm_name" references: []
+2025-06-09T10:24:29.427+0330 [DEBUG] ReferenceTransformer: "var.vsphere_username" references: []
+2025-06-09T10:24:29.427+0330 [DEBUG] ReferenceTransformer: "var.memory" references: []
+2025-06-09T10:24:29.436+0330 [INFO]  backend/local: apply calling Apply
+2025-06-09T10:24:29.436+0330 [DEBUG] Building and walking apply graph for NormalMode plan
+2025-06-09T10:24:29.436+0330 [DEBUG] Resource state not found for node "module.saleh_vm.vsphere_virtual_machine.saleh_vm", instance module.saleh_vm.vsphere_virtual_machine.saleh_vm
+2025-06-09T10:24:29.437+0330 [DEBUG] ProviderTransformer: "data.vsphere_datacenter.dc (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.437+0330 [DEBUG] ProviderTransformer: "data.vsphere_compute_cluster.cluster (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.437+0330 [DEBUG] ProviderTransformer: "module.saleh_vm.vsphere_virtual_machine.saleh_vm (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.437+0330 [DEBUG] ProviderTransformer: "data.vsphere_network.network (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.437+0330 [DEBUG] ProviderTransformer: "module.saleh_vm.vsphere_virtual_machine.saleh_vm" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.437+0330 [DEBUG] ProviderTransformer: "data.vsphere_datastore.ds (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/vsphere"]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "var.num_cpus" references: []
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "var.cluster_name" references: []
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "output.this_vm_power_state (expand)" references: [module.saleh_vm.output.vm_state (expand)]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/vsphere\"]" references: [var.vsphere_server var.vsphere_username var.vsphere_password]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "data.vsphere_network.network (expand)" references: [var.network_name data.vsphere_datacenter.dc (expand)]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "var.vsphere_server" references: []
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.vm_name (expand)" references: [var.vm_name]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.network_id (expand)" references: [data.vsphere_network.network (expand)]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "var.memory" references: []
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "var.thin_provisioned" references: []
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.thin_provisioned (expand)" references: [var.thin_provisioned]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.vsphere_virtual_machine.saleh_vm" references: [module.saleh_vm.var.datastore_id (expand) module.saleh_vm.var.vm_name (expand) module.saleh_vm.var.resource_pool_id (expand) module.saleh_vm.var.guest_id (expand) module.saleh_vm.var.num_cpus (expand) module.saleh_vm.var.memory (expand) module.saleh_vm.var.adapter_type (expand) module.saleh_vm.var.network_id (expand) module.saleh_vm.var.eagerly_scrub (expand) module.saleh_vm.var.thin_provisioned (expand) module.saleh_vm.var.vm_name (expand) module.saleh_vm.var.vm_size (expand)]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm (close)" references: []
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.guest_id (expand)" references: []
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.output.vm_id (expand)" references: [module.saleh_vm.vsphere_virtual_machine.saleh_vm module.saleh_vm.vsphere_virtual_machine.saleh_vm module.saleh_vm.vsphere_virtual_machine.saleh_vm (expand)]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "output.this_vm_id (expand)" references: [module.saleh_vm.output.vm_id (expand)]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "var.vm_name" references: []
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "var.eagerly_scrub" references: []
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.vm_size (expand)" references: [var.vm_size]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.resource_pool_id (expand)" references: [data.vsphere_compute_cluster.cluster (expand)]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.output.vm_state (expand)" references: [module.saleh_vm.vsphere_virtual_machine.saleh_vm module.saleh_vm.vsphere_virtual_machine.saleh_vm module.saleh_vm.vsphere_virtual_machine.saleh_vm (expand)]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "var.datacenter_name" references: []
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "var.datastore_name" references: []
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.eagerly_scrub (expand)" references: [var.eagerly_scrub]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.datastore_id (expand)" references: [data.vsphere_datastore.ds (expand)]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.adapter_type (expand)" references: []
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm (expand)" references: []
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "data.vsphere_datastore.ds (expand)" references: [var.datastore_name data.vsphere_datacenter.dc (expand)]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "data.vsphere_datacenter.dc (expand)" references: [var.datacenter_name]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "var.network_name" references: []
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "var.vsphere_username" references: []
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.num_cpus (expand)" references: [var.num_cpus]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "data.vsphere_compute_cluster.cluster (expand)" references: [data.vsphere_datacenter.dc (expand) var.cluster_name]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.vsphere_virtual_machine.saleh_vm (expand)" references: [module.saleh_vm.var.memory (expand) module.saleh_vm.var.guest_id (expand) module.saleh_vm.var.num_cpus (expand) module.saleh_vm.var.vm_name (expand) module.saleh_vm.var.resource_pool_id (expand) module.saleh_vm.var.datastore_id (expand) module.saleh_vm.var.network_id (expand) module.saleh_vm.var.adapter_type (expand) module.saleh_vm.var.eagerly_scrub (expand) module.saleh_vm.var.thin_provisioned (expand) module.saleh_vm.var.vm_name (expand) module.saleh_vm.var.vm_size (expand)]
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "var.vsphere_password" references: []
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "var.vm_size" references: []
+2025-06-09T10:24:29.438+0330 [DEBUG] ReferenceTransformer: "module.saleh_vm.var.memory (expand)" references: [var.memory]
+2025-06-09T10:24:29.441+0330 [DEBUG] Starting graph walk: walkApply
+2025-06-09T10:24:29.441+0330 [DEBUG] created provider logger: level=debug
+2025-06-09T10:24:29.442+0330 [INFO]  provider: configuring client automatic mTLS
+2025-06-09T10:24:29.449+0330 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5"]
+2025-06-09T10:24:29.449+0330 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5 pid=2292698
+2025-06-09T10:24:29.449+0330 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5
+2025-06-09T10:24:29.458+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: configuring server automatic mTLS: timestamp="2025-06-09T10:24:29.458+0330"
+2025-06-09T10:24:29.471+0330 [DEBUG] provider.terraform-provider-vsphere_v2.8.1_x5: plugin address: address=/tmp/plugin1879849249 network=unix timestamp="2025-06-09T10:24:29.471+0330"
+2025-06-09T10:24:29.471+0330 [DEBUG] provider: using plugin: version=5
+2025-06-09T10:24:29.490+0330 [WARN]  ValidateProviderConfig from "provider[\"registry.terraform.io/hashicorp/vsphere\"]" changed the config value, but that value is unused
+2025-06-09T10:24:29.491+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Cached SOAP client session data not valid or persistence not enabled, new session necessary: timestamp="2025-06-09T10:24:29.491+0330"
+2025-06-09T10:24:29.491+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Creating new SOAP API session on endpoint 192.168.1.100: timestamp="2025-06-09T10:24:29.491+0330"
+2025-06-09T10:24:29.549+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] SOAP API session creation successful: timestamp="2025-06-09T10:24:29.549+0330"
+2025-06-09T10:24:29.549+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] VMWare vSphere Client configured for URL: 192.168.1.100: timestamp="2025-06-09T10:24:29.549+0330"
+2025-06-09T10:24:29.549+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Setting up REST client: timestamp="2025-06-09T10:24:29.549+0330"
+2025-06-09T10:24:29.706+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] CIS REST client configuration successful: timestamp="2025-06-09T10:24:29.706+0330"
+2025-06-09T10:24:29.735+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): Performing diff customization and validation: timestamp="2025-06-09T10:24:29.735+0330"
+2025-06-09T10:24:29.735+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NetworkInterfaceDiffOperation: Beginning diff validation: timestamp="2025-06-09T10:24:29.735+0330"
+2025-06-09T10:24:29.735+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] network_interface.0 (key 0 at <new device>): Beginning diff validation: timestamp="2025-06-09T10:24:29.735+0330"
+2025-06-09T10:24:29.735+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] network_interface.0 (key 0 at <new device>): Diff validation complete: timestamp="2025-06-09T10:24:29.735+0330"
+2025-06-09T10:24:29.735+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NetworkInterfaceDiffOperation: Diff validation complete: timestamp="2025-06-09T10:24:29.735+0330"
+2025-06-09T10:24:29.735+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): resource_pool_id modified without change to host_system_id, marking as computed: timestamp="2025-06-09T10:24:29.735+0330"
+2025-06-09T10:24:29.736+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskDiffOperation: Beginning disk diff customization: timestamp="2025-06-09T10:24:29.736+0330"
+2025-06-09T10:24:29.736+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskDiffOperation: Beginning collective diff validation (indexes aligned to new config): timestamp="2025-06-09T10:24:29.736+0330"
+2025-06-09T10:24:29.736+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] disk.0 (key 0 at <new device>) (<unknown>): Beginning diff validation: timestamp="2025-06-09T10:24:29.736+0330"
+2025-06-09T10:24:29.736+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] disk.0 (key 0 at <new device>) (<unknown>): Diff validation complete: timestamp="2025-06-09T10:24:29.736+0330"
+2025-06-09T10:24:29.736+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskDiffOperation: Beginning diff validation and normalization (indexes aligned to old state): timestamp="2025-06-09T10:24:29.736+0330"
+2025-06-09T10:24:29.736+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskDiffOperation: New resource set post-normalization: (key 0 at <new device>): timestamp="2025-06-09T10:24:29.736+0330"
+2025-06-09T10:24:29.736+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskDiffOperation: Disk diff customization complete, sending new diff: timestamp="2025-06-09T10:24:29.736+0330"
+2025-06-09T10:24:29.736+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] VAppDiffOperation: Verifying configuration meets requirements for vApp transport: timestamp="2025-06-09T10:24:29.736+0330"
+2025-06-09T10:24:29.736+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] VAppDiffOperation: ISO transport is not supported on this virtual machine or multiple transport options exist: timestamp="2025-06-09T10:24:29.736+0330"
+2025-06-09T10:24:29.736+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): Diff customization and validation complete: timestamp="2025-06-09T10:24:29.736+0330"
+2025-06-09T10:24:29.740+0330 [WARN]  Provider "registry.terraform.io/hashicorp/vsphere" produced an invalid plan for module.saleh_vm.vsphere_virtual_machine.saleh_vm, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .ept_rvi_mode: planned value cty.StringVal("automatic") for a non-computed attribute
+      - .cpu_limit: planned value cty.NumberIntVal(-1) for a non-computed attribute
+      - .force_power_off: planned value cty.True for a non-computed attribute
+      - .scsi_type: planned value cty.StringVal("pvscsi") for a non-computed attribute
+      - .run_tools_scripts_after_resume: planned value cty.True for a non-computed attribute
+      - .run_tools_scripts_after_power_on: planned value cty.True for a non-computed attribute
+      - .shutdown_wait_timeout: planned value cty.NumberIntVal(3) for a non-computed attribute
+      - .num_cores_per_socket: planned value cty.NumberIntVal(1) for a non-computed attribute
+      - .sata_controller_count: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .scsi_bus_sharing: planned value cty.StringVal("noSharing") for a non-computed attribute
+      - .firmware: planned value cty.StringVal("bios") for a non-computed attribute
+      - .hv_mode: planned value cty.StringVal("hvAuto") for a non-computed attribute
+      - .sync_time_with_host: planned value cty.True for a non-computed attribute
+      - .run_tools_scripts_before_guest_standby: planned value cty.True for a non-computed attribute
+      - .ide_controller_count: planned value cty.NumberIntVal(2) for a non-computed attribute
+      - .poweron_timeout: planned value cty.NumberIntVal(300) for a non-computed attribute
+      - .run_tools_scripts_before_guest_shutdown: planned value cty.True for a non-computed attribute
+      - .tools_upgrade_policy: planned value cty.StringVal("manual") for a non-computed attribute
+      - .latency_sensitivity: planned value cty.StringVal("normal") for a non-computed attribute
+      - .swap_placement_policy: planned value cty.StringVal("inherit") for a non-computed attribute
+      - .migrate_wait_timeout: planned value cty.NumberIntVal(30) for a non-computed attribute
+      - .memory_share_level: planned value cty.StringVal("normal") for a non-computed attribute
+      - .cpu_share_level: planned value cty.StringVal("normal") for a non-computed attribute
+      - .memory_limit: planned value cty.NumberIntVal(-1) for a non-computed attribute
+      - .scsi_controller_count: planned value cty.NumberIntVal(1) for a non-computed attribute
+      - .boot_retry_delay: planned value cty.NumberIntVal(10000) for a non-computed attribute
+      - .extra_config_reboot_required: planned value cty.True for a non-computed attribute
+      - .disk[0].io_reservation: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .disk[0].controller_type: planned value cty.StringVal("scsi") for a non-computed attribute
+      - .disk[0].io_share_count: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .disk[0].write_through: planned value cty.False for a non-computed attribute
+      - .disk[0].attach: planned value cty.False for a non-computed attribute
+      - .disk[0].unit_number: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .disk[0].keep_on_remove: planned value cty.False for a non-computed attribute
+      - .disk[0].disk_mode: planned value cty.StringVal("persistent") for a non-computed attribute
+      - .disk[0].disk_sharing: planned value cty.StringVal("sharingNone") for a non-computed attribute
+      - .disk[0].io_limit: planned value cty.NumberIntVal(-1) for a non-computed attribute
+      - .disk[0].io_share_level: planned value cty.StringVal("normal") for a non-computed attribute
+      - .network_interface[0].bandwidth_limit: planned value cty.NumberIntVal(-1) for a non-computed attribute
+      - .network_interface[0].bandwidth_reservation: planned value cty.NumberIntVal(0) for a non-computed attribute
+      - .network_interface[0].bandwidth_share_level: planned value cty.StringVal("normal") for a non-computed attribute
+2025-06-09T10:24:29.740+0330 [INFO]  Starting apply for module.saleh_vm.vsphere_virtual_machine.saleh_vm
+2025-06-09T10:24:29.741+0330 [DEBUG] module.saleh_vm.vsphere_virtual_machine.saleh_vm: applying the planned Create change
+2025-06-09T10:24:29.743+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] setting computed for "vapp_transport" from ComputedKeys: timestamp="2025-06-09T10:24:29.743+0330"
+2025-06-09T10:24:29.743+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] setting computed for "guest_ip_addresses" from ComputedKeys: timestamp="2025-06-09T10:24:29.743+0330"
+2025-06-09T10:24:29.743+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): Beginning create: timestamp="2025-06-09T10:24:29.743+0330"
+2025-06-09T10:24:29.743+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] tagsClientIfDefined: No tags configured, skipping loading of tagging client: timestamp="2025-06-09T10:24:29.743+0330"
+2025-06-09T10:24:29.743+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): VM being created from scratch: timestamp="2025-06-09T10:24:29.743+0330"
+2025-06-09T10:24:29.743+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Locating resource pool with ID resgroup-1020: timestamp="2025-06-09T10:24:29.743+0330"
+2025-06-09T10:24:29.748+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Resource pool found: resgroup-1020: timestamp="2025-06-09T10:24:29.748+0330"
+2025-06-09T10:24:29.748+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Locating folder at path "" relative to virtual machine root: timestamp="2025-06-09T10:24:29.748+0330"
+2025-06-09T10:24:29.762+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Folder located: "/DC-1/vm": timestamp="2025-06-09T10:24:29.762+0330"
+2025-06-09T10:24:29.762+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] ValidateHost: no host supplied, nothing to do: timestamp="2025-06-09T10:24:29.762+0330"
+2025-06-09T10:24:29.762+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): Building config spec: timestamp="2025-06-09T10:24:29.762+0330"
+2025-06-09T10:24:29.762+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): Resource argument "guest_id" requires a VM restart: timestamp="2025-06-09T10:24:29.762+0330"
+2025-06-09T10:24:29.762+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): Resource argument "tools_upgrade_policy" requires a VM restart: timestamp="2025-06-09T10:24:29.762+0330"
+2025-06-09T10:24:29.762+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): Resource argument "hv_mode" requires a VM restart: timestamp="2025-06-09T10:24:29.762+0330"
+2025-06-09T10:24:29.762+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): Resource argument "ept_rvi_mode" requires a VM restart: timestamp="2025-06-09T10:24:29.762+0330"
+2025-06-09T10:24:29.763+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): CPU operation requires a VM restart: timestamp="2025-06-09T10:24:29.762+0330"
+2025-06-09T10:24:29.763+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): Resource argument "num_cores_per_socket" requires a VM restart: timestamp="2025-06-09T10:24:29.762+0330"
+2025-06-09T10:24:29.763+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): Memory operation requires a VM restart: timestamp="2025-06-09T10:24:29.762+0330"
+2025-06-09T10:24:29.763+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): Resource argument "swap_placement_policy" requires a VM restart: timestamp="2025-06-09T10:24:29.763+0330"
+2025-06-09T10:24:29.763+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): Resource argument "firmware" requires a VM restart: timestamp="2025-06-09T10:24:29.763+0330"
+2025-06-09T10:24:29.763+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Fetching default device list for resource pool "resgroup-1020" for OS type "otherGuest": timestamp="2025-06-09T10:24:29.763+0330"
+2025-06-09T10:24:29.772+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Fetching default device list for object reference "domain-c1019" for OS type "otherGuest": timestamp="2025-06-09T10:24:29.772+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Default devices: ide-200,ide-201,ps2-300,pci-100,sio-400,keyboard-600,pointing-700,video-500,vmci-12000: timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NormalizeBus: Normalizing first 1 controllers on SCSI bus to device type pvscsi: timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NormalizeBus: Normalizing first 0 controllers on SATA bus: timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NormalizeBus: Normalizing first 2 controllers on IDE bus: timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NormalizeBus: Current SCSI bus contents: <nil>: timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NormalizeBus: Creating SCSI controller of type pvscsi at bus number 0: timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] applyDeviceChange: Applying changes: (add: *types.ParaVirtualSCSIController at key -201): timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] applyDeviceChange: Device list before changes: ide-200,ide-201,ps2-300,pci-100,sio-400,keyboard-600,pointing-700,video-500,vmci-12000: timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] applyDeviceChange: Device list after changes: ide-200,ide-201,ps2-300,pci-100,sio-400,keyboard-600,pointing-700,video-500,vmci-12000,pvscsi--201: timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NormalizeBus: Current SATA bus contents:: timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NormalizeBus: Current IDE bus contents: device-200,device-201: timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NormalizeBus: Outgoing device list: ide-200,ide-201,ps2-300,pci-100,sio-400,keyboard-600,pointing-700,video-500,vmci-12000,pvscsi--201: timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NormalizeBus: Outgoing device config spec: (add: *types.ParaVirtualSCSIController at key -201): timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): SCSI bus has changed and requires a VM restart: timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskApplyOperation: Beginning apply operation: timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskApplyOperation: Looking for resources to delete: timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskApplyOperation: Looking for resources to create or update: timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskApplyOperation: Resources not being changed:: timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] disk.0 (key 0 at <new device>) (<unknown>): Creating disk: timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.900+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Locating datastore with ID "datastore-1025": timestamp="2025-06-09T10:24:29.900+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Datastore with ID "datastore-1025" found: timestamp="2025-06-09T10:24:29.904+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] ControllerForCreateUpdate: Looking for controller type scsi: timestamp="2025-06-09T10:24:29.904+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] pickController: Looking for scsi controller at bus number 0: timestamp="2025-06-09T10:24:29.904+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] pickSCSIController: Found controller: pvscsi--201: timestamp="2025-06-09T10:24:29.904+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] ControllerForCreateUpdate: Found controller: pvscsi--201: timestamp="2025-06-09T10:24:29.904+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] disk.0 (key -202 at scsi:0:0) (<unknown>): Device config operations from create: (add: *types.VirtualDisk at key -202): timestamp="2025-06-09T10:24:29.904+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] disk.0 (key -202 at scsi:0:0) (<unknown>): Create finished: timestamp="2025-06-09T10:24:29.904+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] applyDeviceChange: Applying changes: (add: *types.VirtualDisk at key -202): timestamp="2025-06-09T10:24:29.904+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] applyDeviceChange: Device list before changes: ide-200,ide-201,ps2-300,pci-100,sio-400,keyboard-600,pointing-700,video-500,vmci-12000,pvscsi--201: timestamp="2025-06-09T10:24:29.905+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] applyDeviceChange: Device list after changes: ide-200,ide-201,ps2-300,pci-100,sio-400,keyboard-600,pointing-700,video-500,vmci-12000,pvscsi--201,disk--201-0: timestamp="2025-06-09T10:24:29.905+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskApplyOperation: Post-apply final resource list: (key -202 at scsi:0:0): timestamp="2025-06-09T10:24:29.905+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskApplyOperation: Device list at end of operation: ide-200,ide-201,ps2-300,pci-100,sio-400,keyboard-600,pointing-700,video-500,vmci-12000,pvscsi--201,disk--201-0: timestamp="2025-06-09T10:24:29.905+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskApplyOperation: Device config operations from apply: (add: *types.VirtualDisk at key -202): timestamp="2025-06-09T10:24:29.905+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] DiskApplyOperation: Apply complete, returning updated spec: timestamp="2025-06-09T10:24:29.905+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NetworkInterfaceApplyOperation: Beginning apply operation: timestamp="2025-06-09T10:24:29.905+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NetworkInterfaceApplyOperation: Looking for resources to delete: timestamp="2025-06-09T10:24:29.905+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NetworkInterfaceApplyOperation: Looking for resources to create or update: timestamp="2025-06-09T10:24:29.905+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] network_interface.0 (key 0 at <new device>): Running create: timestamp="2025-06-09T10:24:29.905+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] ControllerForCreateUpdate: Looking for controller type pci: timestamp="2025-06-09T10:24:29.905+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] pickController: Looking for pci controller at bus number 0: timestamp="2025-06-09T10:24:29.905+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] pickSCSIController: Found controller: pci-100: timestamp="2025-06-09T10:24:29.905+0330"
+2025-06-09T10:24:29.905+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] ControllerForCreateUpdate: Found controller: pci-100: timestamp="2025-06-09T10:24:29.905+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] network_interface.0 (key -203 at pci:0:-1): Device config operations from create: (add: *types.VirtualVmxnet3 at key -203): timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] network_interface.0 (key -203 at pci:0:-1): Create finished: timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] applyDeviceChange: Applying changes: (add: *types.VirtualVmxnet3 at key -203): timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] applyDeviceChange: Device list before changes: ide-200,ide-201,ps2-300,pci-100,sio-400,keyboard-600,pointing-700,video-500,vmci-12000,pvscsi--201,disk--201-0: timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] applyDeviceChange: Device list after changes: ide-200,ide-201,ps2-300,pci-100,sio-400,keyboard-600,pointing-700,video-500,vmci-12000,pvscsi--201,disk--201-0,ethernet--7: timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NetworkInterfaceApplyOperation: Post-apply final resource list: (key -203 at pci:0:-1): timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NetworkInterfaceApplyOperation: Device list at end of operation: ide-200,ide-201,ps2-300,pci-100,sio-400,keyboard-600,pointing-700,video-500,vmci-12000,pvscsi--201,disk--201-0,ethernet--7: timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NetworkInterfaceApplyOperation: Device config operations from apply: (add: *types.VirtualVmxnet3 at key -203): timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] NetworkInterfaceApplyOperation: Apply complete, returning updated spec: timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] CdromApplyOperation: Beginning apply operation: timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] CdromApplyOperation: Looking for resources to delete: timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] CdromApplyOperation: Looking for resources to create or update: timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] CdromApplyOperation: Post-apply final resource list:: timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] CdromApplyOperation: Device list at end of operation: ide-200,ide-201,ps2-300,pci-100,sio-400,keyboard-600,pointing-700,video-500,vmci-12000,pvscsi--201,disk--201-0,ethernet--7: timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] CdromApplyOperation: Device config operations from apply:: timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] CdromApplyOperation: Apply complete, returning updated spec: timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): Final device list: ide-200,ide-201,ps2-300,pci-100,sio-400,keyboard-600,pointing-700,video-500,vmci-12000,pvscsi--201,disk--201-0,ethernet--7: timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] vsphere_virtual_machine (ID = <new resource>): Final device change spec: (add: *types.ParaVirtualSCSIController at key -201),(add: *types.VirtualDisk at key -202),(add: *types.VirtualVmxnet3 at key -203): timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.928+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Locating datastore with ID "datastore-1025": timestamp="2025-06-09T10:24:29.928+0330"
+2025-06-09T10:24:29.932+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Datastore with ID "datastore-1025" found: timestamp="2025-06-09T10:24:29.932+0330"
+2025-06-09T10:24:29.932+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Creating virtual machine "/DC-1/vm/saleh-02-test": timestamp="2025-06-09T10:24:29.932+0330"
+2025-06-09T10:24:29.932+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:29 [DEBUG] Locating vApp container with ID resgroup-1020: timestamp="2025-06-09T10:24:29.932+0330"
+2025-06-09T10:24:31.140+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:31 [DEBUG] Virtual machine "/DC-1/vm/saleh-02-test": creation complete (MOID: "vm-20090"): timestamp="2025-06-09T10:24:31.140+0330"
+2025-06-09T10:24:31.146+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:31 [DEBUG] Fetching properties for VM "/DC-1/vm/saleh-02-test": timestamp="2025-06-09T10:24:31.146+0330"
+2025-06-09T10:24:31.159+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:31 [DEBUG] VM "/DC-1/vm/saleh-02-test" - UUID is "4233da83-8390-ad32-4491-3393fd87e9f9": timestamp="2025-06-09T10:24:31.159+0330"
+2025-06-09T10:24:31.159+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:31 [DEBUG] Powering on virtual machine "/DC-1/vm/saleh-02-test": timestamp="2025-06-09T10:24:31.159+0330"
+2025-06-09T10:24:31.159+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:31 [DEBUG] blockUntilReadyForMethod: Going to block until "PowerOnVM_Task" is no longer in the Disabled Methods list for vm vm-20090: timestamp="2025-06-09T10:24:31.159+0330"
+2025-06-09T10:24:31.159+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:31 [DEBUG] Fetching properties for VM "/DC-1/vm/saleh-02-test": timestamp="2025-06-09T10:24:31.159+0330"
+2025-06-09T10:24:36.175+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:36 [DEBUG] blockUntilReadyForMethod: "PowerOnVM_Task" still disabled for vm vm-20090, about to check again: timestamp="2025-06-09T10:24:36.175+0330"
+2025-06-09T10:24:36.175+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:36 [DEBUG] Fetching properties for VM "/DC-1/vm/saleh-02-test": timestamp="2025-06-09T10:24:36.175+0330"
+2025-06-09T10:24:36.191+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:36 [DEBUG] blockUntilReadyForMethod: "PowerOnVM_Task" no longer disabled for vm vm-20090: timestamp="2025-06-09T10:24:36.191+0330"
+2025-06-09T10:24:36.692+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:36 [DEBUG] Fetching properties for VM "/DC-1/vm/saleh-02-test": timestamp="2025-06-09T10:24:36.691+0330"
+2025-06-09T10:24:36.708+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:36 [DEBUG] VM "/DC-1/vm/saleh-02-test" is powered off, attempting to power on.: timestamp="2025-06-09T10:24:36.708+0330"
+2025-06-09T10:24:37.520+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] PowerOn task for VM "/DC-1/vm/saleh-02-test" was successful.: timestamp="2025-06-09T10:24:37.519+0330"
+2025-06-09T10:24:37.520+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] Fetching properties for VM "/DC-1/vm/saleh-02-test": timestamp="2025-06-09T10:24:37.519+0330"
+2025-06-09T10:24:37.537+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] Skipping IP waiter for VM "/DC-1/vm/saleh-02-test": timestamp="2025-06-09T10:24:37.537+0330"
+2025-06-09T10:24:37.537+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] Skipping network waiter for VM "/DC-1/vm/saleh-02-test": timestamp="2025-06-09T10:24:37.537+0330"
+2025-06-09T10:24:37.537+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] vsphere_virtual_machine (ID = 4233da83-8390-ad32-4491-3393fd87e9f9): Create complete: timestamp="2025-06-09T10:24:37.537+0330"
+2025-06-09T10:24:37.537+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] vsphere_virtual_machine (ID = 4233da83-8390-ad32-4491-3393fd87e9f9): Reading state of virtual machine: timestamp="2025-06-09T10:24:37.537+0330"
+2025-06-09T10:24:37.537+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] Locating virtual machine with UUID "4233da83-8390-ad32-4491-3393fd87e9f9": timestamp="2025-06-09T10:24:37.537+0330"
+2025-06-09T10:24:37.537+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] Using SearchIndex to look up UUID "4233da83-8390-ad32-4491-3393fd87e9f9": timestamp="2025-06-09T10:24:37.537+0330"
+2025-06-09T10:24:37.543+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] VM "/DC-1/vm/saleh-02-test" found for UUID "4233da83-8390-ad32-4491-3393fd87e9f9": timestamp="2025-06-09T10:24:37.543+0330"
+2025-06-09T10:24:37.543+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] Fetching properties for VM "/DC-1/vm/saleh-02-test": timestamp="2025-06-09T10:24:37.543+0330"
+2025-06-09T10:24:37.561+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] MOID for VM "/DC-1/vm/saleh-02-test" is "vm-20090": timestamp="2025-06-09T10:24:37.561+0330"
+2025-06-09T10:24:37.561+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] Locating vApp container with ID resgroup-1020: timestamp="2025-06-09T10:24:37.561+0330"
+2025-06-09T10:24:37.568+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] Locating datastore with ID "datastore-1025": timestamp="2025-06-09T10:24:37.568+0330"
+2025-06-09T10:24:37.572+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] Datastore with ID "datastore-1025" found: timestamp="2025-06-09T10:24:37.572+0330"
+2025-06-09T10:24:37.582+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] queryAssociatedProfile: Retrieving storage policy of server object of type [virtualMachine] and key [vm-20090].: timestamp="2025-06-09T10:24:37.582+0330"
+2025-06-09T10:24:37.616+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] ReadSCSIBusType: SCSI controller layout for first 1 controllers: pvscsi-1000: timestamp="2025-06-09T10:24:37.616+0330"
+2025-06-09T10:24:37.616+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] ReadSCSIBusSharing: SCSI controller layout for first 1 controllers: pvscsi-1000: timestamp="2025-06-09T10:24:37.616+0330"
+2025-06-09T10:24:37.616+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] DiskRefreshOperation: Beginning refresh: timestamp="2025-06-09T10:24:37.616+0330"
+2025-06-09T10:24:37.616+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] DiskRefreshOperation: Found controller "controller-1000" for device "disk-1000-0": timestamp="2025-06-09T10:24:37.616+0330"
+2025-06-09T10:24:37.616+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] DiskRefreshOperation: Disk devices located: disk-1000-0: timestamp="2025-06-09T10:24:37.616+0330"
+2025-06-09T10:24:37.616+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] DiskRefreshOperation: Current resource set from state: (key -202 at scsi:0:0): timestamp="2025-06-09T10:24:37.616+0330"
+2025-06-09T10:24:37.616+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] DiskRefreshOperation: Looking for freshly-created or re-assigned resources to read in: timestamp="2025-06-09T10:24:37.616+0330"
+2025-06-09T10:24:37.619+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] disk.0 (key -202 at scsi:0:0) (<unknown>): Reading state: timestamp="2025-06-09T10:24:37.617+0330"
+2025-06-09T10:24:37.619+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] FindVirtualDevice: Looking for device with address scsi:0:0: timestamp="2025-06-09T10:24:37.617+0330"
+2025-06-09T10:24:37.619+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] FindVirtualDevice: Device found: disk-1000-0: timestamp="2025-06-09T10:24:37.617+0330"
+2025-06-09T10:24:37.619+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] Locating virtual machine with UUID "4233da83-8390-ad32-4491-3393fd87e9f9": timestamp="2025-06-09T10:24:37.617+0330"
+2025-06-09T10:24:37.619+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] Using SearchIndex to look up UUID "4233da83-8390-ad32-4491-3393fd87e9f9": timestamp="2025-06-09T10:24:37.617+0330"
+2025-06-09T10:24:37.626+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] VM "/DC-1/vm/saleh-02-test" found for UUID "4233da83-8390-ad32-4491-3393fd87e9f9": timestamp="2025-06-09T10:24:37.626+0330"
+2025-06-09T10:24:37.630+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] queryAssociatedProfile: Retrieving storage policy of server object of type [virtualDiskId] and key [vm-20090:2000].: timestamp="2025-06-09T10:24:37.630+0330"
+2025-06-09T10:24:37.657+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] disk.0 (key 2000 at scsi:0:0) (26854668-16aa-d646-6bfa-f40343e7ed70/saleh-02-test.vmdk): Read finished (key and device address may have changed): timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.657+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] DiskRefreshOperation: Disk devices after created/re-assigned device search:: timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.657+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] DiskRefreshOperation: Resource set to write after created/re-assigned device search: (key 2000 at scsi:0:0): timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.657+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] DiskRefreshOperation: Looking for devices known in state: timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.657+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] DiskRefreshOperation: Resource set to write after known device search: (key 2000 at scsi:0:0): timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.657+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] DiskRefreshOperation: Probable orphaned disk devices:: timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.657+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] DiskRefreshOperation: Adding orphaned devices: timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.657+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] DiskRefreshOperation: Resource set to write after adding orphaned devices: (key 2000 at scsi:0:0): timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.657+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] DiskRefreshOperation: Final (sorted) resource set to write: (key 2000 at scsi:0:0): timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.657+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] DiskRefreshOperation: Refresh operation complete, sending new resource set: timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.657+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] NetworkInterfaceRefreshOperation: Beginning refresh: timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.657+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] NetworkInterfaceRefreshOperation: Network devices located: ethernet-0: timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.657+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] NetworkInterfaceRefreshOperation: Current resource set from state: (key -203 at pci:0:-1): timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.657+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] NetworkInterfaceRefreshOperation: Looking for freshly-created resources to read in: timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.657+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] NetworkInterfaceRefreshOperation: Network devices after freshly-created device search: ethernet-0: timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.657+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] NetworkInterfaceRefreshOperation: Resource sets to write after known device search:: timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.658+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] NetworkInterfaceRefreshOperation: Looking for devices known in state: timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.658+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] network_interface.0 (key 4000 at pci:0:-1): Reading state: timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.658+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] FindVirtualDevice: Looking for device with key 4000: timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.658+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] FindVirtualDevice: Device found: ethernet-0: timestamp="2025-06-09T10:24:37.657+0330"
+2025-06-09T10:24:37.665+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] Read: Adapter type not SR-IOV: timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.665+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] network_interface.0 (key 4000 at pci:0:7): Read finished (key and device address may have changed): timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.665+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] NetworkInterfaceRefreshOperation: Resource sets to write after known device search: (key 4000 at pci:0:7): timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.665+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] NetworkInterfaceRefreshOperation: Probable orphaned network interfaces:: timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.665+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] NetworkInterfaceRefreshOperation: Adding orphaned devices: timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.665+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] NetworkInterfaceRefreshOperation: 0 devices and a new set of length 1: timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.665+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] NetworkInterfaceRefreshOperation: Resource set to write after adding orphaned devices: (key 4000 at pci:0:7): timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.665+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] NetworkInterfaceRefreshOperation: Refresh operation complete, sending new resource set: timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.666+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] CdromRefreshOperation: Beginning refresh: timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.666+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] CdromRefreshOperation: CDROM devices located:: timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.666+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] CdromRefreshOperation: Current resource set from state:: timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.666+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] CdromRefreshOperation: Looking for freshly-created resources to read in: timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.666+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] CdromRefreshOperation: CDROM devices after freshly-created device search:: timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.666+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] CdromRefreshOperation: Resource set to write after freshly-created device search:: timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.666+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] CdromRefreshOperation: Looking for devices known in state: timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.666+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] CdromRefreshOperation: Resource set to write after known device search:: timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.666+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] CdromRefreshOperation: Probable orphaned CDROM devices:: timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.666+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] CdromRefreshOperation: Resource set to write after adding orphaned devices:: timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.666+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] CdromRefreshOperation: Refresh operation complete, sending new resource set: timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.666+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] Reading tags for object "vm-20090": timestamp="2025-06-09T10:24:37.665+0330"
+2025-06-09T10:24:37.805+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] Tags for object "vm-20090":: timestamp="2025-06-09T10:24:37.805+0330"
+2025-06-09T10:24:37.805+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] vsphere_virtual_machine (ID = 4233da83-8390-ad32-4491-3393fd87e9f9): Checking guest networking state: timestamp="2025-06-09T10:24:37.805+0330"
+2025-06-09T10:24:37.805+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] vsphere_virtual_machine (ID = 4233da83-8390-ad32-4491-3393fd87e9f9): No IP addresses found in guest state: timestamp="2025-06-09T10:24:37.805+0330"
+2025-06-09T10:24:37.805+0330 [INFO]  provider.terraform-provider-vsphere_v2.8.1_x5: 2025/06/09 10:24:37 [DEBUG] vsphere_virtual_machine (ID = 4233da83-8390-ad32-4491-3393fd87e9f9): Read complete: timestamp="2025-06-09T10:24:37.805+0330"
+2025-06-09T10:24:37.811+0330 [WARN]  Provider "provider[\"registry.terraform.io/hashicorp/vsphere\"]" produced an unexpected new value for module.saleh_vm.vsphere_virtual_machine.saleh_vm, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .ept_rvi_mode: was cty.StringVal("automatic"), but now cty.StringVal("")
+      - .vvtd_enabled: was null, but now cty.False
+      - .boot_delay: was null, but now cty.NumberIntVal(0)
+      - .cpu_hot_add_enabled: was null, but now cty.False
+      - .folder: was null, but now cty.StringVal("")
+      - .memory_hot_add_enabled: was null, but now cty.False
+      - .hv_mode: was cty.StringVal("hvAuto"), but now cty.StringVal("")
+      - .cpu_reservation: was null, but now cty.NumberIntVal(0)
+      - .sync_time_with_host_periodically: was null, but now cty.False
+      - .vbs_enabled: was null, but now cty.False
+      - .enable_disk_uuid: was null, but now cty.False
+      - .memory_reservation: was null, but now cty.NumberIntVal(0)
+      - .efi_secure_boot_enabled: was null, but now cty.False
+      - .run_tools_scripts_before_guest_reboot: was null, but now cty.False
+      - .cpu_hot_remove_enabled: was null, but now cty.False
+      - .nested_hv_enabled: was null, but now cty.False
+      - .boot_retry_enabled: was null, but now cty.False
+      - .cpu_performance_counters_enabled: was null, but now cty.False
+      - .enable_logging: was null, but now cty.False
+      - .memory_reservation_locked_to_max: was null, but now cty.False
+      - .alternate_guest_name: was null, but now cty.StringVal("")
+      - .disk[0].datastore_id: was cty.StringVal("<computed>"), but now cty.StringVal("datastore-1025")
+      - .disk[0].io_share_count: was cty.NumberIntVal(0), but now cty.NumberIntVal(1000)
+      - .disk[0].key: was cty.NumberIntVal(0), but now cty.NumberIntVal(2000)
+      - .network_interface[0].use_static_mac: was null, but now cty.False
+      - .network_interface[0].ovf_mapping: was null, but now cty.StringVal("")
+      - .network_interface[0].physical_function: was null, but now cty.StringVal("")
+2025-06-09T10:24:37.817+0330 [DEBUG] State storage *statemgr.Filesystem declined to persist a state snapshot
+2025-06-09T10:24:37.818+0330 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2025-06-09T10:24:37.823+0330 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/vsphere/2.8.1/linux_amd64/terraform-provider-vsphere_v2.8.1_x5 pid=2292698
+2025-06-09T10:24:37.823+0330 [DEBUG] provider: plugin exited
