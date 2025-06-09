@@ -6,7 +6,7 @@ resource "vsphere_virtual_machine" "saleh_vm" {
 
   resource_pool_id = var.resource_pool_id
   datastore_id     = var.datastore_id
-  # guest_id         = var.guest_id
+  guest_id         = var.guest_id
 
   network_interface {
     network_id   = var.network_id

@@ -60,11 +60,6 @@ variable "vm_size" {
   type        = number
 }
 
-# variable "guest_id" {
-#   description = "Guest OS identifier"
-#   type        = string
-# }
-
 variable "eagerly_scrub" {
   description = "Set for thick eager-zeroed disk"
   type        = bool
