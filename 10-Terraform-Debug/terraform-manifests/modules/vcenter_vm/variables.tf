@@ -1,42 +1,23 @@
-### Info to connect vCenter ###
-variable "vsphere_username" {
-  description = "Username for vSphere"
-  type        = string
-  sensitive   = true
-}
-
-variable "vsphere_password" {
-  description = "Password for vSphere"
-  type        = string
-  sensitive   = true
-}
-
-variable "vsphere_server" {
-  description = "vSphere server address"
-  type        = string
-  sensitive   = true
-}
-
 ### Info about vCenter resources ###
-
-variable "datacenter_name" {
-  description = "Name of the vSphere datacenter"
+variable "resource_pool_id" {
+  description = "The resource pool ID"
   type        = string
 }
 
-variable "datastore_name" {
-  description = "Name of the vSphere datastore"
+variable "datastore_id" {
+  description = "The datastore ID"
   type        = string
 }
 
-variable "network_name" {
-  description = "Name of the network to attach the VM"
+variable "network_id" {
+  description = "Network ID"
   type        = string
 }
 
-variable "cluster_name" {
-  description = "Name of the compute cluster"
+variable "adapter_type" {
+  description = "Type of network adapter"
   type        = string
+  default     = "vmxnet3"
 }
 
 ###  Info for create VM ###
@@ -58,6 +39,11 @@ variable "memory" {
 variable "vm_size" {
   description = "Disk size in GB"
   type        = number
+}
+
+variable "guest_id" {
+  description = "Guest OS identifier"
+  type        = string
 }
 
 variable "eagerly_scrub" {

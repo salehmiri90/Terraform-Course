@@ -1,0 +1,19 @@
+digraph G {
+  rankdir = "RL";
+  node [shape = rect, fontname = "sans-serif"];
+  "data.vsphere_compute_cluster.cluster" [label="data.vsphere_compute_cluster.cluster"];
+  "data.vsphere_datacenter.dc" [label="data.vsphere_datacenter.dc"];
+  "data.vsphere_datastore.ds" [label="data.vsphere_datastore.ds"];
+  "data.vsphere_network.network" [label="data.vsphere_network.network"];
+  subgraph "cluster_module.saleh_vm" {
+    label = "module.saleh_vm"
+    fontname = "sans-serif"
+    "module.saleh_vm.vsphere_virtual_machine.saleh_vm" [label="vsphere_virtual_machine.saleh_vm"];
+  }
+  "data.vsphere_compute_cluster.cluster" -> "data.vsphere_datacenter.dc";
+  "data.vsphere_datastore.ds" -> "data.vsphere_datacenter.dc";
+  "data.vsphere_network.network" -> "data.vsphere_datacenter.dc";
+  "module.saleh_vm.vsphere_virtual_machine.saleh_vm" -> "data.vsphere_compute_cluster.cluster";
+  "module.saleh_vm.vsphere_virtual_machine.saleh_vm" -> "data.vsphere_datastore.ds";
+  "module.saleh_vm.vsphere_virtual_machine.saleh_vm" -> "data.vsphere_network.network";
+}
