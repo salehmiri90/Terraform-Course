@@ -32,7 +32,7 @@ resource "vsphere_virtual_machine" "saleh_vm" { # BLOCK
 }
 ```
 
-## Step-03: Terraform Comments
+# Terraform Comments
 
 - One line comment
 
