@@ -1,5 +1,10 @@
 # Terraform Command Basics
 
+## Step-0: Create Directory
+```
+$ mkdir /root/terraform-manifests
+$ cd /root/terraform-manifests
+```
 ## Step-01: Introduction
 - Understand basic Terraform Commands
   - terraform init
@@ -18,6 +23,7 @@ terraform {
   required_providers {
     vsphere = {
       source  = "registry.terraform.io/hashicorp/vsphere"
+      version = "2.8.1"
     }
   }
 }
