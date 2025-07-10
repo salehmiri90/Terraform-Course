@@ -1,5 +1,9 @@
 # Installing Terraform on Linux
 
+Optional Step
+```
+$ yum install -y curl wget vim unzip
+```
 A binary distribution is avaialble for all environments. Let's grab the latest version of it for linux.
 
 ```

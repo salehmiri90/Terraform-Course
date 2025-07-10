@@ -6,8 +6,7 @@
 
 ## Step-02: LinuxOS: Terraform Install
 - [Download Terraform](https://www.terraform.io/downloads.html)
-- [Linux OS - Terraform Install](https://learn.hashicorp.com/tutorials/terraform/install-cli)
-
+- [Linux OS - Terraform Install](https://developer.hashicorp.com/terraform/install)
 
 ## Step-03: MACOS: Terraform Install
 - [Download Terraform MAC](https://www.terraform.io/downloads.html)
