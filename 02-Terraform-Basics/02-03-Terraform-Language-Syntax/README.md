@@ -32,6 +32,32 @@ resource "vsphere_virtual_machine" "saleh_vm" { # BLOCK
 }
 ```
 
+## Step-03: Terraform Comments
+
+- One line comment
+
+```
+# This resource creates a virtual machine
+resource "vsphere_virtual_machine" "web" {
+  name = "web-server"
+  // Memory size in MB
+  memory = 2048
+}
+```
+
+- Multi line comment
+
+```
+/*
+  This block creates a VM in the staging environment.
+  It uses the vsphere provider and connects to a custom network.
+*/
+resource "vsphere_virtual_machine" "staging" {
+  name = "stage-vm"
+  memory = 4096
+}
+```
+
 # Datatypes Example
 ```
 type = "string"
