@@ -41,7 +41,7 @@
 - Modules / Templates
 
 ## Step-08: Terraform Website and Providers
-- (Training GitHub Repository)[https://github.com/salehmiri90/terraform-course.git​]
-- (Terraform Website​)[https://developer.hashicorp.com/terraform​]
-- (Terraform Providers​)[https://registry.terraform.io/​]
-- (Terraform Providers vSphere​)[https://github.com/hashicorp/terraform-provider-vsphere​]
+- [Training GitHub Repository](https://github.com/salehmiri90/terraform-course.git​)
+- [Terraform Website​](https://developer.hashicorp.com/terraform​)
+- [Terraform Providers​](https://registry.terraform.io/​)
+- [Terraform Providers vSphere​](https://github.com/hashicorp/terraform-provider-vsphere​)
