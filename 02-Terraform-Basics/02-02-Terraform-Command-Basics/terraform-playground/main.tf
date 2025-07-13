@@ -1,6 +1,7 @@
 # TASK for HOME
 /*
-1. Run terraform workflow on this file and focus on outputs
+1. Install terraform on a linux machine, then
+2. Run terraform workflow on this file and focus on outputs
 */
 resource "local_file" "pet" { 
     filename = "/root/pets.txt" 
