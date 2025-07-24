@@ -4,8 +4,9 @@ terraform {
   required_providers {
     vsphere = {
       source  = "hashicorp/vsphere"
-      version = "~> 2.0.0"  ##.terraform.lock.hcl file
-      #version = ">= 2.0.0" #.terraform.lock.hcl-backup file
+      version = "~> 2.0.0"  #open .terraform.lock.hcl file, then change this file to .terraform.lock.hcl-backup
+      #version = ">= 2.0.0" #new created .terraform.lock.hcl file
+      #check below path: .terraform/providers/registry.terraform.io/hashicorp/vsphere/
     }
   }
 }
