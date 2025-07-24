@@ -1,8 +1,6 @@
 # Task for Home
 /*
-Play with provider version base on the information on terraform webiste, 
-then 
-run terraform init and check the .terraform.lock.hcl file content
+Run terraform init and check the created files and their contents
 */
 
 # terraform block
