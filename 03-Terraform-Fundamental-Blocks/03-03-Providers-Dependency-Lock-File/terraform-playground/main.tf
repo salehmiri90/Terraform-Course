@@ -1,8 +1,7 @@
 # Task for Home
 /*
-Play with provider version base on the information on terraform webiste, 
-then 
-run terraform init and check the .terraform.lock.hcl file content
+Change the provider version and get backup from lock file
+then check the provider path on the local directory
 */
 
 # terraform block
