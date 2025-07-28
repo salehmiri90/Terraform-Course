@@ -17,7 +17,7 @@ terraform {
   }
 }
 # resource block
-resource "local_file" "pet" { 
-    filename = "/root/pets.txt" 
+resource "local_file" "saleh" { 
+    filename = "/${path.module}/pets.txt" 
     content = "We love pets!"
 }
