@@ -9,6 +9,6 @@
 # Place to write your code here :
 
 resource "local_file" "saleh" { 
-    filename = "/${path.module}/pets.txt" 
+    filename = "pets.txt" 
     content = "We love pets!"
 }
