@@ -4,20 +4,20 @@
 terraform {
   required_version = "~> 1.8.0"
   required_providers {
-    random = {
-      source = "hashicorp/random"
-      version = "= 3.7.2"
-    }
     local = {
       source = "hashicorp/local"
-      version = "= 2.5.3"
+      version = ">= 2.5.0"
+    }
+    random = {
+      source = "hashicorp/random"
+      version = ">= 3.7.0"
     }
   }
 }
 # variables block
 // first apply with below and check the result.
 variable "filename" {
-  default = "/root/pet_name.txt"
+  default = "playground-04-03-pets.txt"
 }
 
 # resource block

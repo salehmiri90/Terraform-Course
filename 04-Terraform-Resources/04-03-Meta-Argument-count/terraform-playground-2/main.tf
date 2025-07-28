@@ -4,22 +4,22 @@
 terraform {
   required_version = "~> 1.8.0"
   required_providers {
-    random = {
-      source = "hashicorp/random"
-      version = "= 3.7.2"
-    }
     local = {
       source = "hashicorp/local"
-      version = "= 2.5.3"
+      version = ">= 2.5.0"
+    }
+    random = {
+      source = "hashicorp/random"
+      version = ">= 3.7.0"
     }
   }
 }
 
 variable "filename" {
   default = [
-    "/root/pets.txt",
-    "/root/cats.txt",
-    "/root/dogs.txt"
+    "playground-04-03-pets.txt",
+    "playground-04-03-cats.txt",
+    "playground-04-03-dogs.txt"
   ]
 }
 
