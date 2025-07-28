@@ -26,6 +26,6 @@ resource "local_file" "saleh" {
   // When random_pet mypet resource is finished, after that this resource will run
   depends_on = [random_pet.mypet] 
 
-  filename = "pet_name.txt"
+  filename = "playground-04-02-pets.txt"
   content  = "Generated pet name: ${random_pet.mypet.id}"
 }
