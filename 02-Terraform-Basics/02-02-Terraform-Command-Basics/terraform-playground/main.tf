@@ -4,7 +4,6 @@
 2. Run terraform workflow on this file and focus on outputs
 */
 resource "local_file" "saleh" { 
-    filename = "/root/pets.txt"
-    #filename = "/${path.module}/pets.txt"
+    filename = "pets.txt"
     content = "We love pets!"
 }
