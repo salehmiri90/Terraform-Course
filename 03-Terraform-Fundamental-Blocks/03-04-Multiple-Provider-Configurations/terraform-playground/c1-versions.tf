@@ -13,6 +13,7 @@ terraform {
     }
   }
 }
+
 # resource block
 provider "local" {
   alias = "a"
