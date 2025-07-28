@@ -21,5 +21,5 @@ resource "random_pet" "demo1" {
 
 resource "local_file" "saleh" {
   content  = "The pet name is ${random_pet.demo1.id}"
-  filename = "/${path.module}/pets.txt"
+  filename = "${path.module}/pets.txt"
 }
