@@ -8,7 +8,7 @@
 */
 # Place to write your code here:
 
-resource "local_file" "pet" { 
-    filename = "/root/pets.txt" 
+resource "local_file" "saleh" { 
+    filename = "/${path.module}/pets.txt" 
     content = "We love pets!"
 }
