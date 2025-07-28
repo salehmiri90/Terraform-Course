@@ -17,6 +17,6 @@ terraform {
 }
 # resource block
 resource "local_file" "saleh" { 
-    filename = "pets.txt" 
+    filename = "playground-03-02-pets.txt" 
     content = "We love pets!"
 }
