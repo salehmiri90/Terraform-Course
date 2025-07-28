@@ -9,6 +9,6 @@
 # Place to write your code here :
 
 resource "local_file" "saleh" { 
-    filename = "pets.txt" 
+    filename = "playground-03-01-pets.txt" 
     content = "We love pets!"
 }
