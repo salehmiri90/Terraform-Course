@@ -4,6 +4,6 @@
 2. Run terraform workflow on this file and focus on outputs
 */
 resource "local_file" "saleh" { 
-    filename = "pets.txt"
+    filename = "playground-02-02-pets.txt"
     content = "We love pets!"
 }
