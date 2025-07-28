@@ -22,7 +22,7 @@ resource "random_pet" "mypet" {
   separator = "-"
 }
 
-resource "local_file" "mypet" {
+resource "local_file" "saleh" {
   // When random_pet mypet resource is finished, then this resource will run
   depends_on = [random_pet.mypet] 
 
