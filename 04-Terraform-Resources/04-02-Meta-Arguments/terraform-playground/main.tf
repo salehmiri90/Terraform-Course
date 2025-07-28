@@ -23,7 +23,7 @@ resource "random_pet" "mypet" {
 }
 
 resource "local_file" "saleh" {
-  // When random_pet mypet resource is finished, then this resource will run
+  // When random_pet mypet resource is finished, after that this resource will run
   depends_on = [random_pet.mypet] 
 
   filename = "${path.module}/pet_name.txt"
