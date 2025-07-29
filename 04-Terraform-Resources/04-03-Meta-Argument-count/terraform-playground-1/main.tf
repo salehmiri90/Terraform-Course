@@ -26,3 +26,4 @@ resource "local_file" "saleh" {
   filename = var.filename
   content  = "This is file number ${count.index}"
 }
+// check the output file name by openning it and see what is the number insde of file
