@@ -1,4 +1,4 @@
-# Task for Home
+# Lets have fun on Linux!
 /*
 Change the provider version and get backup from lock file
 then check the provider path on the local directory
@@ -15,9 +15,4 @@ terraform {
       #check below path: .terraform/providers/registry.terraform.io/hashicorp/local/
     }
   }
-}
-# resource block
-resource "local_file" "saleh" { 
-    filename = "playground-03-03-pets.txt" 
-    content = "We love pets!"
 }
