@@ -1,3 +1,5 @@
+# Lets have fun on Linux!
+
 // run this code first
 resource "local_file" "pet" {
   filename = "v3-pets.txt"
