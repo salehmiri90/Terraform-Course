@@ -1,3 +1,4 @@
+# Lets have fun on Linux!
 resource "local_file" "file_b" {
   provider = local.b
   content  = "This file is created by saleh using provider B"

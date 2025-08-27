@@ -1,4 +1,4 @@
-# Task for Home
+# Lets have fun on Linux!
 /*
 Run terraform init and check the created files and their contents
 */
