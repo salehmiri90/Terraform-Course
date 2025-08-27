@@ -1,4 +1,4 @@
-# Task for Home
+# Lets have fun on Linux!
 /*
 Play with provider version base on the information on terraform webiste, 
 then 
@@ -14,9 +14,4 @@ terraform {
       version = ">= 2.5.0"
     }
   }
-}
-# resource block
-resource "local_file" "saleh" { 
-    filename = "playground-03-02-pets.txt" 
-    content = "We love pets!"
 }
