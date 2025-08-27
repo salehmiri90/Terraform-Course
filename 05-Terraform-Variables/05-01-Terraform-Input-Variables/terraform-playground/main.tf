@@ -1,4 +1,5 @@
-// homework
+# Lets have fun on Linux!
+
 // convert this hard-coded code to variables
 
 resource "local_file" "pet" {
