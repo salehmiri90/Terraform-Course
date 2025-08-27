@@ -1,4 +1,4 @@
-# TASK for HOME
+# Lets have fun on Linux!
 /*
 1. Install terraform on a linux machine, then
 2. Run terraform workflow on this file and focus on outputs

@@ -1,3 +1,5 @@
+# Lets have fun on VMware!
+
 # Terraform Settings Block
 terraform {
   required_version = ">= 0.13"
