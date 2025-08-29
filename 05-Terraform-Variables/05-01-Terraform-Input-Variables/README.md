@@ -9,11 +9,8 @@
 - **v6:** Provide Input Variables using `<any-name>.tfvars` file with CLI 
 argument `-var-file`
 - **v7:** Provide Input Variables using `auto.tfvars` files
-- **v8-01:** Implement complex type constructors like `list` 
-- **v8-02:** Implement complex type constructors like `maps`
-- **v9:** Implement Custom Validation Rules in Variables
-- **v10:** Protect Sensitive Input Variables
-- **v11:** Understand about `File` function
+- **v8:** Protect Sensitive Input Variables
+- **v9:** Understand about `File` function
 
 ## Pre-requisite
 - Terraform >= 1.8.0
@@ -54,15 +51,7 @@ This repository contains practical examples and scenarios to help you learn and 
 ### 7. Use `*.auto.tfvars` File
 - Automatically loading variable values from files ending in `.auto.tfvars`
 
-### 8. Complex Variable Types (List & Map)
-- Defining and using `list` and `map` variable types
-- Example: Assigning a list of disk sizes for a VM
-
-### 9. Custom Validation Rules
-- Implementing validation rules to restrict allowed input values
-- Example: Validating CPU count is within a specific range
-
-### 10. Sensitive Input Variables
+### 8. Sensitive Input Variables
 - Marking variables as sensitive to hide them in CLI output
 - Example: Password or secret keys
 
@@ -75,7 +64,7 @@ This repository contains practical examples and scenarios to help you learn and 
 - **Important Note-2:** Terraform state file contains values for these sensitive variables `terraform.tfstate`. You must keep your state file secure to avoid exposing this data.
 
 
-### 11. Using the `file()` Function
+### 9. Using the `file()` Function
 - Reading external text files (e.g., SSH public keys, config scripts) and passing their content as variables
 - **Reference Sub folder:** v11-File-Function
 - Understand about [Terraform File Function](https://www.terraform.io/docs/language/functions/file.html)
