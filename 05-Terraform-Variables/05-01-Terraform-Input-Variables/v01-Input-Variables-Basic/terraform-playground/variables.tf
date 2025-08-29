@@ -5,7 +5,6 @@ variable "filename" {
   default     = "pets.txt"
   type        = string
   description = "the path of local file"
-  #sensitive   = true
 }
 variable "content" {
   default     = "I love pets!"
@@ -18,6 +17,7 @@ variable "prefix" {
   description = "the prefix to be set"
 }
 variable "separator" {
+  type = string
   default = "."
 }
 variable "length" {
