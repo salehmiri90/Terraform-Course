@@ -2,7 +2,6 @@ variable "filename" {
   default     = "pets.txt"
   type        = string
   description = "the path of local file"
-  sensitive   = true
 }
 variable "content" {
   default     = "I love pets!"
